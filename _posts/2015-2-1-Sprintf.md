@@ -1,0 +1,8 @@
+---
+layout: post
+title: printf与sprintf的实现
+---
+  因为要修复[Wine的Bug](https://bugs.winehq.org/show_bug.cgi?id=37913),需要重新实现sprintf，
+于是研究了wine中printf跟sprinf的实现。
+    其实printf跟sprintf实现的关键无非就是可变参数，利用它就可以写出一个功能简单的printf.  我仔细研究了一下Wine
+里面的实现，发现printf跟sprintf的实现核心都用到了pfprintfa(就是根据参数%f,%d等转换的函数)，不过重定向不一样。  printf是用到了write_concole, sprintf是复制到buf里面～
