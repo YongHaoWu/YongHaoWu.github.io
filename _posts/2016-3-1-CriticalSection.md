@@ -1,6 +1,13 @@
 ---
 layout: post
-title: CriticalSection的解释
+title: CriticalSection的测试
+description: 在Wine中对CriticalSection做测试
+categories:
+- 技术
+tags:
+- Wine
+
+
 ---
 
     #include <stdio.h>
