@@ -107,12 +107,13 @@
         </script>
         {% else %}
             {% if site.duoshuo.config %}
+<!-- 多说评论框 start -->
             <script type="text/javascript">
-                var duoshuoQuery = {short_name:"{{ site.duoshuo.id }}"};
+                var duoshuoQuery = {short_name:"yonghaohu""};
                 (function() {
                     var ds = document.createElement('script');
                     ds.type = 'text/javascript';ds.async = true;
-                    ds.src = 'http://static.duoshuo.com/embed.js';
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
                     ds.charset = 'UTF-8';
                     (document.getElementsByTagName('head')[0]
                     || document.getElementsByTagName('body')[0]).appendChild(ds);
