@@ -10,7 +10,7 @@ safe: false
 
 #站点基础配置
 title: For The Best Thing In The World
-subTitle: Cache.
+subTitle: Do it now.
 description: 写东西的Cache
 url: http://yonghaowu.github.io/
 feed: /atom.xml
@@ -41,7 +41,7 @@ headimg:
   - item: http://gtms03.alicdn.com/tps/i3/T1U_YlFAlcXXbErygJ-2048-260.jpg
   - item: http://gtms04.alicdn.com/tps/i4/T1K0LLFvVbXXbErygJ-2048-260.jpg
   - item: http://gtms01.alicdn.com/tps/i1/T12DHKFx4bXXbErygJ-2048-260.jpg
-
+  - item: http://av.jejeso.com/soranokiseki.jpg
 #关注我
 follow:
 
