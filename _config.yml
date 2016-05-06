@@ -28,7 +28,7 @@ nav:
   - text: 关于我
     url: /about/
   - text: 网站日志
-    url: /logs/
+    url: /opensource/
   - text: 订阅
     url: /atom.xml
 
