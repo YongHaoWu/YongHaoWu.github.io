@@ -9,9 +9,9 @@ permalink: /:year/:month/:day/:title/
 safe: false
 
 #站点基础配置
-title: Pretend To Write Like A Hacker
-subTitle: besteric.
-description: 记录生活点滴，积累沉淀...
+title: For The Best Thing In The World
+subTitle: Cache.
+description: 写东西的Cache
 url: http://yonghaowu.github.io/
 feed: /atom.xml
 
@@ -19,10 +19,10 @@ feed: /atom.xml
 nav:
   - text: 首页
     url: /
-  - text: 游戏
-    url: /game/
-  - text: 运动
-    url: /sports/
+  - text: 技术
+    url: /tech/
+  - text: 生活
+    url: /life/
   - text: 文章列表
     url: /archives/
   - text: 关于我
@@ -46,16 +46,16 @@ headimg:
 follow:
 
   - class: fa-github
-    url: http://github.com/besteric
+    url: https://github.com/YongHaoWu
   - class: fa-twitter
-    url: http://www.twitter.com/besteric
+    url: https://twitter.com/YongHao_Hu
   - class: fa-rss
-    url: http://www.besteric.com/atom.xml
+    url: http://yonghaowu.github.io/atom.xml
 
 #作者信息
 author:
-  name: besteric
-  link: http://www.besteric.com/contact.html
+  name: YongHaoHu
+  link: https://www.linkedin.com/in/yonghaohu
   img: 
 
 #评论信息
