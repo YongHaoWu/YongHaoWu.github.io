@@ -10,6 +10,7 @@ tags:
 
 ---
 
+```
     #include <stdio.h>
     #include <stdlib.h>
     #include <pthread.h>
@@ -42,6 +43,7 @@ tags:
         }
         printf("final counter is %d\n", counter);
     }
+```
 
 
   解释是: 两个线程一起运行后, 便分别对全局变量counter进行加一, 5000次循环.
