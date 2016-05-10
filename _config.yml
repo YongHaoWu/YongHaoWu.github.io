@@ -10,7 +10,7 @@ safe: false
 
 #站点基础配置
 title: For The Best Thing In The World
-subTitle: Do it now.
+subTitle:  Work Hard to Enjoy Them.
 description: 写东西的Cache
 url: http://yonghaowu.github.io/
 feed: /atom.xml
@@ -19,8 +19,8 @@ feed: /atom.xml
 nav:
   - text: 首页
     url: /
-  - text: 技术
-    url: /tech/
+  - text: 学习原则
+    url: /experience/
   - text: 生活
     url: /life/
   - text: 文章列表
