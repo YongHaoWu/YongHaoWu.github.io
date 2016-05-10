@@ -27,8 +27,8 @@ nav:
     url: /archives/
   - text: 关于我
     url: /about/
-  - text: 网站日志
-    url: /opensource/
+  - text: 友情链接
+    url: /friend_link/
   - text: 订阅
     url: /atom.xml
 
