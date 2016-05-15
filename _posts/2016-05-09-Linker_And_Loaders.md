@@ -11,7 +11,7 @@ tags:
 ## 编译的详细过程
 以hello.c的源文件为例, C/C++编译, 链接与装载的流程是
 
-1. ```gcc -E``` 将hello.c预处理, 把所有的宏展开, 解析#ifndef, 删除注释等, 得到hello.i文件.
+1. ```gcc -E``` 将hello.c预处理, 把所有的宏展开, 解析#ifndef, 删除注释等, 得到translation unit(编译单元) hello.i文件.
 2. ```gcc -S``` 将hello.i编译成汇编文件hello.s
 3. ```gcc -c``` 汇编器as将hello.s编译成成目标文件hello.o
 4. ```gcc   ``` 链接器ld将hello.o链接成可执行文件a.out
@@ -61,7 +61,7 @@ $ echo $?
 .section指示把代码划分成若干个段(Section), 程序被操作系统加载执行时, 每个段被加载到不同的地址, 具有不同的读、写、执行权限。
 .data段保存程序的数据, 是可读可写的, C程序的全局变量也属于.data段. 本程序中没有定义数据, 所以.data段是空的
 
-所以, 我们的hello.c源代码经过gcc -S 翻译后, 就得到伪操作以及一些运算指令(hello.s).
+所以, 我们的hello.c源代码经过```gcc -S``` 翻译后, 就得到伪操作以及一些运算指令(hello.s).
 接着, 使用```as hello.s```根据段信息等得到目标文件hello.o, 目标文件由若干个Section组成, 我们在汇编文件中声明的.section会成为目标文件的Section, 此外汇编器会自动添加一些Section(比如符号表).
 
 C程序编译后的执行语句都翻译成机器指令放在.text段, 已初始化的全局变量和局部静态变量放在.data段, 未初始化或者默认初始化(即是0)的全局变量和局部静态变量放在.bss的段里, 有.bss段的目的是为了节省内存空间, 因为都为0, 只需要为它们预留位置即可.
@@ -80,8 +80,9 @@ ELF(Executable and Linking Format)是一个开放标准, 各种UNIX系统的可�
 * 共享库(Shared Object, 或者Shared Library), Linux的.so, Windows的.DLL
 * 核心转储文件(Core Dump File)a, Linux下的core dump
 
-大家想想, 当我们以前编译多个文件时, 就会有多个目标文件. 当A文件使用B文件的函数时, 两个目标文件, 是如何通信呢?
-你会怎么设计呢?
+大家想想, 当我们编译多个文件时, 就会有多个目标文件. 
+当A文件使用B文件的函数时, A文件是如何得知B文件函数的地址是什么呢?
+这个过程, 就叫做重定位.
 
 下一篇我们讲解, 重定位, 重定位表, 符号等.
 
