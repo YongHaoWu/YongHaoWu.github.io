@@ -133,25 +133,93 @@ int main(void)
 在编译链接时, ```gcc foo.c bar.c```, 在Mac系统里, gcc和clang编译, 链接器ld会表明double x这个强符号替换了int x这个弱符号.
 > ld: warning: tentative definition of '_x' with size 8 from '/var/folders/81/0q8j79597dldk23mm2svgpjc0000gn/T//cc79XQz8.o' is being replaced by real definition of smaller size 4 from '/var/folders/81/0q8j79597dldk23mm2svgpjc0000gn/T//ccBHUpu6.o'
 
-3. 如果一个符号在所有的目标文件中都是弱符号, 那么选择其中占用空间最大的一个.
+3. 如果一个符号在所有的目标文件中都是弱符号, 那么选择其中占用空间最大的一个. 其实这个说法有两个, 选择最大空间的是程序员的自我修养的说法,
+而CSAPP的说法是, 随机选择一个.
+在这里, 我猜测是两者用词用所不同. 请往下看:
 
 ```
- /* bar3.c */
+ /* weak2.c */
+__attribute__((weak)) long double x;
+
+ /* weak1.c */
  double x;
 
- /* foo3.c */
+ /* main.c */
  #include <stdio.h>
  void f(void);
  int x;
  int main()
 {
  x = 1314;
- printf("%f \n", x);
  return 0;
 }
 ```
 
-这里输出0.000000
+```gcc -c weak1.c weak2.c main.c``` 得到目标文件, 用```nm -S weak1.o```分别查看, 可以知道, main.c中的x占用4字节, weak1.c中的x占用8字节, 
+weak2.c中x占用16字节.
+
+```
+➜ nm -S w1.o
+0000000000000008 0000000000000008 C x
+
+➜ nm -S w2.o
+0000000000000010 0000000000000010 C x
+
+➜ nm -S main.o
+0000000000000000 0000000000000040 T main
+                 U printf
+0000000000000004 0000000000000004 C x
+0000000000000008 0000000000000008 C y
+```
+
+最终链接后, 使用```readelf -s```或者```nm -S```查看:
+
+```
+➜ nm -S a.out
+0000000000601040 B __bss_start
+0000000000601040 0000000000000001 b completed.6973
+0000000000601030 D __data_start
+0000000000601030 W data_start
+0000000000400470 t deregister_tm_clones
+00000000004004e0 t __do_global_dtors_aux
+0000000000600e18 t __do_global_dtors_aux_fini_array_entry
+0000000000601038 D __dso_handle
+0000000000600e28 d _DYNAMIC
+0000000000601040 D _edata
+0000000000601060 B _end
+00000000004005e4 T _fini
+0000000000400500 t frame_dummy
+0000000000600e10 t __frame_dummy_init_array_entry
+0000000000400730 r __FRAME_END__
+0000000000601000 d _GLOBAL_OFFSET_TABLE_
+                 w __gmon_start__
+00000000004003e0 T _init
+0000000000600e18 t __init_array_end
+0000000000600e10 t __init_array_start
+00000000004005f0 0000000000000004 R _IO_stdin_used
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+0000000000600e20 d __JCR_END__
+0000000000600e20 d __JCR_LIST__
+                 w _Jv_RegisterClasses
+00000000004005e0 0000000000000002 T __libc_csu_fini
+0000000000400570 0000000000000065 T __libc_csu_init
+                 U __libc_start_main@@GLIBC_2.2.5
+000000000040052d 0000000000000040 T main
+                 U printf@@GLIBC_2.2.5
+00000000004004a0 t register_tm_clones
+0000000000400440 T _start
+0000000000601040 D __TMC_END__
+0000000000601050 0000000000000010 B x
+0000000000601048 0000000000000008 B y
+
+
+gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04) 
+```
+
+可以看到, 最终的x是占用16字节的空间.
+
+### 总结
 
 
 尽量不要使用多个不同类型的弱符号.
