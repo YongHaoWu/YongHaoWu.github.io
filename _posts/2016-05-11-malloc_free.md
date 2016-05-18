@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 你想过为什么free不像malloc一样需要长度参数吗?
-description: 照理来说, malloc需要指定分配多少内存, free也应该要指定释放多少, 对吧?
+title: 为什么free不像malloc一样需要长度参数吗?
+description: 你想过为什么free不像malloc一样需要长度参数吗? 照理来说, malloc需要指定分配多少内存, free也应该要指定释放多少, 对吧?
 categories:
 - 技术
 tags:
