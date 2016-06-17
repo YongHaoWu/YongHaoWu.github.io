@@ -36,7 +36,7 @@ Notes:
 ###Approach #1 (count the difference of two list's length) [Accepted]
 ####Algorithm
 
-Let's say list A and list B, at first, we calculate their length.
+At first, we calculate the length of list A and list B. 
 If A is longer, curA traverse the steps' difference to arrive at the relative start position of curB and vice versa.
 Then curA and curB traverse to the end together, eventually they will meet at the intersection point or nullptr.
 
