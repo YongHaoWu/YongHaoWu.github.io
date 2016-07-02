@@ -94,6 +94,7 @@ public:
     }
 };
 ```
+###Solution2(find_first_of)
 
 ```
 class Solution {
@@ -123,7 +124,7 @@ public:
 If you have learn how machine do the add operation through bits or read the book Code, it is easy to know that using xor(^) operation can simulate add without carry. Then and(&) operation can simulate carry after shift(<<).
 For example, 
 
-    ```
+```
 101 + 101 = 1010 
 101 ^ 101 = 000 //(without carry)
 (101 & 101) << 1 =  1010 //carry
@@ -131,9 +132,11 @@ For example,
 
 1010 ^ 000 = 1010
 (1010 & 000) = 0000
-    ```
+```
 
-    ```
+###Solution1(using & and ^ to simulate add)
+
+```
 class Solution {
 public:
     int getSum(int a, int b) {
@@ -146,4 +149,4 @@ public:
         return sum;
     }
 };
-    ```
+```
