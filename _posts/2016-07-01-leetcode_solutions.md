@@ -150,3 +150,108 @@ public:
     }
 };
 ```
+
+## 257. [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)
+
+> Given a binary tree, return all root-to-leaf paths.
+
+We can use DFS(pre-order traverse) to get root-to-leaf paths.
+If a leaf do not left child and right child, then we can think this is a root-to-leaf path, and we can push the string to vector.
+
+### Solution(use DFS)
+```
+class Solution {
+    public:
+        vector<string> binaryTreePaths(TreeNode* root) {
+            vector<string> vec;
+            string res;
+            travel(root, res, vec);
+            return vec;
+        }
+    private:
+        void travel(TreeNode* root, string res, vector<string> &vec) {
+            if(root == nullptr)
+                return;
+            if((root->left==nullptr&&root->right==nullptr)) {
+                res = res + to_string(root->val);
+                vec.push_back(res);
+                return;
+            }
+            res = res + to_string(root->val) + "->" ;
+            travel(root->left, res, vec);
+            travel(root->right,res, vec);
+        }
+};
+```
+
+###234. [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
+
+> Given a singly linked list, determine if it is a palindrome.
+
+Reverse half of the linked list, then check whether they are equal.
+
+# Solution(reverse)
+
+```
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        if(head == nullptr || head->next == nullptr)
+            return true;
+        ListNode *slow = head, *fast = head;
+        while(fast->next && fast->next->next) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        slow->next = reverse_list(slow);
+        slow = slow->next;
+        while(slow) {
+            if(head->val != slow->val)
+                return false;
+
+            slow = slow->next;
+            head = head->next;
+        }
+        return true;
+    }
+private:
+    ListNode *reverse_list(ListNode *slow) {
+        ListNode *prev = slow;
+        ListNode *cur, *tmp_next = prev->next;
+        while(tmp_next) {
+            cur = tmp_next;
+            tmp_next = cur->next;
+            cur->next = prev;
+            prev = cur;
+        }
+        slow->next->next = nullptr;
+        return cur;
+    }
+};
+```
+
+###205. [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
+
+> Given two strings s and t, determine if they are isomorphic.
+> Two strings are isomorphic if the characters in s can be replaced to get t.
+
+For example, a <-> 7 instead of a->7, b->7, that means it needs two hash map to record the reflect.
+
+```
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        unordered_map<char, char> hash, reflect;
+        for(int i=0; i<s.length(); ++i) {
+            if(hash.find(s[i])==end(hash) && reflect.find(t[i])==end(reflect)) {
+                hash[s[i]] = t[i];
+                reflect[t[i]] = s[i];
+            }else {
+                if(hash[s[i]] != t[i])
+                    return false;
+            }
+        }
+        return true;
+    }
+};
+```
