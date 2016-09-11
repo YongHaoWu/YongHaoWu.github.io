@@ -33,6 +33,7 @@ func clearDatebase() {
 ```
 
 gorm:
+
 * primary_key 设置主键
 * not null 非空约束
 * size:64 类型大小,通常是指varchar
