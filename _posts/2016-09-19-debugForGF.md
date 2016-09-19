@@ -9,18 +9,28 @@ tags:
 ---
 
 debug的关键:
+
 1. 复制/提炼关键词，比如把个人项目的名字，个人的变量名这些网上不可能有人跟你一样的东西都删除掉，到网上搜索。
-```(pq: duplicate key value violates unique constraint "users_email")```像这样一条报错信息，明显users_email是我自己的变量名，而pq则是psql数据库，括号doesn't help, 所以只需要查```pq: duplicate key value violates unique constraint```
+
+
 2. 尽可能利用二分法打印，确定程序出错的部位，具体哪一个语句
+
 3. 获取出错位置的上下文，比如变量的内容，出现什么错
+
 4. 以上办法都没有帮助，就自己尝试改变变量内容，尝试复现错误或者避免错误发生，由此看看有没有启发
+
 5. 如果没法定位出错内容，就使用注释，看最小程序能运行的部分代码是什么，多一行就错的话，错的就是那个部分
+
 6. 实在想不到，只有先搁置，或者自己试图用文字描述错误
+
 7. 文字描述完还是没有灵感，就问别人吧。
 
+---
 
+1的例子如下: 
+```(pq: duplicate key value violates unique constraint "users_email")```像这样一条报错信息，明显users_email是我自己的变量名，而pq则是psql数据库，括号doesn't help, 所以只需要查```pq: duplicate key value violates unique constraint```
 
-1. 硬编码配置```        db, err := gorm.Open("postgres", "host=localhost user=yonghao dbname=backend sslmode=disable password=") ```，就可以连接数据库
+硬编码配置```        db, err := gorm.Open("postgres", "host=localhost user=yonghao dbname=backend sslmode=disable password=") ```，就可以连接数据库
 而 
 
 ```
