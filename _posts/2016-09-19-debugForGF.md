@@ -28,11 +28,21 @@ debug的关键:
 ---
     
 
-1的例子如下: 
-```(pq: duplicate key value violates unique constraint "users_email")```像这样一条报错信息，明显users_email是我自己的变量名，而pq则是psql数据库，括号doesn't help, 所以只需要查```pq: duplicate key value violates unique constraint```
+###复制/提炼关键词
 
-硬编码配置```        db, err := gorm.Open("postgres", "host=localhost user=yonghao dbname=backend sslmode=disable password=") ```，就可以连接数据库
-而 
+```
+(pq: duplicate key value violates unique constraint "users_email")```像这样一条报错信息，明显users_email是我自己的变量名，而pq则是psql数据库，括号doesn't help, 所以只需要查```pq: duplicate key value violates unique constraint
+```
+
+
+###硬编码
+
+把函数或者一些变量硬编码(写死了它的值而不是赋值进去), 对比一下与原来结果
+
+```
+db, err := gorm.Open("postgres", "host=localhost user=yonghao dbname=backend sslmode=disable password=") 
+```
+，就可以连接数据库. 而 
 
 ```
 db, err = gorm.Open("postgres", fmt.Sprintf("host=%s user=%s dbname=%s sslmode=disable password=%s",
@@ -42,9 +52,10 @@ db, err = gorm.Open("postgres", fmt.Sprintf("host=%s user=%s dbname=%s sslmode=d
 			info.Password,
 		)) 
 ```
+
 则是去连接username而不是dbname的
 
-这个是成功时打印的信息
+成功时打印的信息
 
 > [Warn] 2016/08/20 11:56:08 psql.go:30: success to connect database <nil> details:  host=localhost user=yonghao password= dbname=backend sslmode=disable
 
@@ -55,15 +66,19 @@ db, err = gorm.Open("postgres", fmt.Sprintf("host=%s user=%s dbname=%s sslmode=d
 后来对比一下硬编码与Sprintf的区别，便发现格式不太一样，心想会不会是格式的问题，便把硬编码的密码字段移到最后，最后发现了可以成功。再把硬编码里的密码字段移到前面，发现同样不行。
 于是便确定了是问题是密码字段在中间，因为密码为空，便变成了这样```password=dbname=backend```，psql无法识别特殊字段，而放在最后没有任何东西才真正为空。
 
+###硬编码
+
 ---
     
 
 SQL查询语句无法找到内容，明明数据库里有记录，在数据库里执行没有问题。
 再三检查SQL语句没有问题，到另外一个数据库里，复制一个查询的key到语句中硬编码可行，可是明明另外一个数据库与我的测试无关。
-最后发现是两个数据库配置不一样了。
+观察打印出来的信息, 最后发现是两个数据库配置不一样了。
 
 ---
     
+###跟踪定位
+根据出错信息, 一层层的跟踪定位出错的函数, 打印查看关键变量的值.
 
 ```
 func GetAllTrustUsersBySN(sn string) ([]domain.TrustUser, error) {
@@ -73,8 +88,10 @@ func GetAllTrustUsersBySN(sn string) ([]domain.TrustUser, error) {
 		return nil, err
 	}
 ```
+
 程序运行时crashed，利用报错时的堆栈信息（就是一层层的函数调用里，找最早自己写的函数），定位到以上函数，知道里面的db为空。
 db为空，查看```client.NewConn()```，发现NewConn是系统函数应该没有问题，可能就是在client身上。client是全局变量， 在另外一个地方（父模块）里调用了
+
 ```
 var client *psql.Client
 
@@ -82,11 +99,14 @@ func Init(c *psql.Client) {
 	client = c
 }
 ```
+
 把初始化放到子模块里，捣弄一下，就可以了。
 明显原因是只是启动子模块，并不会调用子模块的初始化，所以需要子模块特别初始化。
 
 ---
-    
+
+###怀疑不了解的API
+遇到了不一样的情况, 对比一下同类的区别, 去调查自己不了解的API.
 
 我需要下载把数据写入到新文件里，但是发现创建文件是可以下载的，但是打开一个已经下载到一半的文件，并不能下载下来，文件大小一直都没有变化。在确认其他都没有问题的情况下， 我把错误信息打印出来了，发现是invalid argument。上网搜索信息无果，便对比一下
 
