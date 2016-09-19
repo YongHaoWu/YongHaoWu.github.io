@@ -26,6 +26,7 @@ debug的关键:
 7. 文字描述完还是没有灵感，就问别人吧。
 
 ---
+    
 
 1的例子如下: 
 ```(pq: duplicate key value violates unique constraint "users_email")```像这样一条报错信息，明显users_email是我自己的变量名，而pq则是psql数据库，括号doesn't help, 所以只需要查```pq: duplicate key value violates unique constraint```
@@ -54,12 +55,16 @@ db, err = gorm.Open("postgres", fmt.Sprintf("host=%s user=%s dbname=%s sslmode=d
 后来对比一下硬编码与Sprintf的区别，便发现格式不太一样，心想会不会是格式的问题，便把硬编码的密码字段移到最后，最后发现了可以成功。再把硬编码里的密码字段移到前面，发现同样不行。
 于是便确定了是问题是密码字段在中间，因为密码为空，便变成了这样```password=dbname=backend```，psql无法识别特殊字段，而放在最后没有任何东西才真正为空。
 
-2. 
+---
+    
+
 SQL查询语句无法找到内容，明明数据库里有记录，在数据库里执行没有问题。
 再三检查SQL语句没有问题，到另外一个数据库里，复制一个查询的key到语句中硬编码可行，可是明明另外一个数据库与我的测试无关。
 最后发现是两个数据库配置不一样了。
 
-3.
+---
+    
+
 ```
 func GetAllTrustUsersBySN(sn string) ([]domain.TrustUser, error) {
 	db := client.NewConn()
@@ -80,8 +85,9 @@ func Init(c *psql.Client) {
 把初始化放到子模块里，捣弄一下，就可以了。
 明显原因是只是启动子模块，并不会调用子模块的初始化，所以需要子模块特别初始化。
 
+---
+    
 
-4. 
 我需要下载把数据写入到新文件里，但是发现创建文件是可以下载的，但是打开一个已经下载到一半的文件，并不能下载下来，文件大小一直都没有变化。在确认其他都没有问题的情况下， 我把错误信息打印出来了，发现是invalid argument。上网搜索信息无果，便对比一下
 
 ```
