@@ -40,7 +40,8 @@ func (p *RemoteConnPool) Close(c RemoteConn) error {
 
 在CloseMindsockConn里全局加了读锁遍历map，在==conn的条件时到Close函数里，Close函数里加了写锁删除map里的东西，结果就block了，死锁。
 
-现在我不用全局读锁，在要使用close函数时把读锁去掉，用完又锁回来
+##解决方法:
+不用全局读锁，在要使用close函数时把读锁去掉，用完又锁回来
 
 即上述情况变成:
 
