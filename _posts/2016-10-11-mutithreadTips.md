@@ -67,3 +67,45 @@ func (p *RemoteConnPool) CloseMindsockConn(conn *Conn) error {
 
 在上面的情况下，就是close给CloseMindsockConn使用，不加锁也不会有冲突，也就不会自己锁自己
 公开Close给外部使用，加锁，这样问题就好了
+
+---
+
+3. 
+ 
+```
+	for i := 0; i < connCount/2; i++ {
+		go func() {
+			conn := NewConn(&websocket.Conn{})
+			mux.Lock()
+			defer mux.Unlock()
+			c := ConnPool.NewBaseRemoteConn(conn)
+			remoteConns[c.id] = c
+		}()
+	}
+
+	mux.RLock()
+	defer mux.RUnlock()
+	for ConnPool.ConnsCount() < connCount || len(remoteConns) < connCount {
+		time.Sleep(time.Millisecond)
+	}
+```
+
+此代码乍看没有问题,实际上由于开了很多线程都持有读锁改变remoteConns, 而下面for循环遍历读取remoteConns这个map的length,
+所以条件不满足的时候,会一直循环,又由于持有读锁,所以上面的线程并不能写, 自然map也无法添加.
+于是一直死循环.
+
+##解决方法:
+
+锁的范围太大了, 我们只是想对if里的条件加锁, 所以把条件抽象成函数,在里面加锁就好了.
+
+```
+	for isCreateConnsFinished() {
+		time.Sleep(time.Millisecond)
+	}
+
+func isCreateConnsFinished() bool {
+	mux.RLock()
+	defer mux.RUnlock()
+	return (ConnPool.ConnsCount() < connCount || len(remoteConns) < connCount)
+}
+```
