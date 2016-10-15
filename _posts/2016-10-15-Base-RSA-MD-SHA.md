@@ -1,7 +1,7 @@
 ---
 layout: post
-title: golang作用域
-description: golang的:=操作符虽然方便,但在作用域上也带来了潜在的疑惑和危险.
+title: 关于加密算法名词的科普
+description: Base32, RSA, MD5, SHA以及SSL等名词的科普
 categories:
 - 技术
 tags:
