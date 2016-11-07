@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 不用if结构,如何写程序?
-description: 不用if,else,三目运算符?: , switch, 如何写程序好?
+description: 不用if,else,三目运算符, switch, 如何写程序好?
 categories:
 - 技术
 tags:
