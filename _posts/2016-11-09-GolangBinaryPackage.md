@@ -1,7 +1,7 @@
 ---
 layout: post
 title: golang生成binary package
-description: 虽然go1.5支持共享库，但是由于golang并不能像C语言一样通过export，头文件与.C文件分离，所以并不能实现与C语言一样，只提供头文件与共享库而不提供实现的方法。 go1.7引入了binary-package, 实现了以上C语言的功能，提供二进制包。
+description: 虽然go1.5支持共享库，但是由于golang并不能像C语言一样通过export，头文件与C文件分离，所以并不能实现与C语言一样，只提供头文件与共享库而不提供实现的方法。 go1.7引入了binary-package, 实现了以上C语言的功能，提供二进制包。
 categories:
 - 技术
 tags:
