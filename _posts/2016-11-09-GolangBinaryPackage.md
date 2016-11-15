@@ -16,7 +16,9 @@ go1.7引入了[binary-package](https://tip.golang.org/pkg/go/build/#hdr-Binary_O
 
 生成的步骤比较复杂, 因此我制作了一个可以生成二进制包以及fake.go(相当于C语言的头文件)的[golang-binary-package-generator工具](https://github.com/YongHaoWu/golang-binary-package-generator#golang-binary-package-generator)
 
-# How to use it
+
+### How to use it
+
 1. Specify generatedDirs and projectName(which should be the deploy.sh 's parent directory name) in deploy.sh.
 2. Execute ```$  ./deploy.sh```
 3. Delete your framework implementation and move fakeGoPackagesPath 's fake go files to implementation's position.
@@ -29,7 +31,10 @@ go1.7引入了[binary-package](https://tip.golang.org/pkg/go/build/#hdr-Binary_O
 
 2. $GOPATH/src相应目录放入对应库目录的Go源文件，里面加入以下注释：
 
-```//go:binary-only-package```
+```
+//go:binary-only-package
+```
+
 保留包的声明语句 package mypkg ， 保留包的文档信息时还可以用go doc查阅包文档。
 
 ---
