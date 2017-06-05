@@ -60,9 +60,9 @@ author:
 
 #评论信息
 disqus:
-  config: false
-  id: piznblog
+  config: true
+  id: yonghaohu
 
 duoshuo:
-  config: true
+  config: false
   id: yonghaohu
