@@ -137,6 +137,25 @@ pick 84c413a install skill: Fix skill pkg relative path.
 
 ---
 
+## 不用担心的回退
+
+回退大家应该都知道`git reset --hard commitID`, 把整个 git 回退到这个 commitID 里；
+
+其实除了`--hard`, 还有 `soft`. 
+
+`hard`是把改动全部都丢弃，而`soft`则柔软一些，仅仅是把所做的 commit 丢掉，而改动都保留在本地——通常用来修改，再重新 commit 一遍。
+
+
+
+做了胡乱的更改，导致 `git log`都不正常，找不回那个 commit 了怎么办？
+
+不用担心， 还有 `git reflog` — `Reference logs, or "reflogs", record when the tips of branches and other references were updated in the local repository.`
+
+用它可以看到你对当前项目所做过的所有 git 操作，所有 git 操作的 id 号——意味着你可以回退到任意的时刻。
+
+所以，只要你没有把改动没有做 commit 就丢失，又或者用`git push -f`把 github 仓库覆盖了，你就可以恢复任意时刻的东西。
+
+---
 
 ## git stash 暂存更改
 
