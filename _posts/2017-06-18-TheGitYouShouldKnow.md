@@ -12,7 +12,7 @@ tags:
 
 绝大多数人对于 git的认识只停留在`git status`, `git add`, `git push`, `git pull`, 好一点会知道`git merge`, 那就是全部了。
 
-####不信？####
+####不信？
 
 试试你能回答出以下问题不：
 
