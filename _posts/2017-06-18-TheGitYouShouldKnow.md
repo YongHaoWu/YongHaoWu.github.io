@@ -144,6 +144,10 @@ pick 84c413a install skill: Fix skill pkg relative path.
 
 此时不想 commit，便需要 `git stash` 暂存更改；顾名思义，stash 使用 stack（栈）实现，所以可以 `git stash`存多次，然后切换分支后， `git stash pop` 撤出来
 
+## 比 grep 更好用的 git grep
+
+相比于 `grep -R keyword ./` , 我是更喜欢用 `git grep keyword`, 差不多是一样的，不过`git grep`只是会找当前的 目录中git 有 track（跟踪）的文件【也就是变动时，git status 会检测到变化的文件】
+
 ---
 
 ## 超级进阶：分割commit
