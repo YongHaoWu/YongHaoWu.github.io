@@ -12,7 +12,7 @@ tags:
 
 绝大多数人对于 git的认识只停留在`git status`, `git add`, `git push`, `git pull`, 好一点会知道`git merge`, 那就是全部了。
 
-不信？
+####不信？####
 
 试试你能回答出以下问题不：
 
@@ -26,6 +26,7 @@ tags:
 
 如果以上有不清楚的话，那么我希望以下的文章对你有帮助。
 
+---
 
 
 #### 你所不知道的 github 初始化
@@ -40,7 +41,7 @@ tags:
 
 `  git push -u origin master` , 这里就是把 master（默认 git 分支）推送到 origin， `-u`也就是`--set-upstream`, 代表的是更新默认推送的地方，这里就是默认以后`git pull`和`git push`时，都是推送和拉自 origin 。
 
-
+---
 
 #### 令 commit 更漂亮
 
@@ -73,6 +74,7 @@ git rebase gakki/origin feat-add-lister //把 gakki 的 master 分支 rebase 到
  因为 pull 的时候， 当出现冲突而你解决掉后，会有多余的`merge`信息（commit message），所以我是推荐在自己的分支开发时，永远使用 fetch，rebase（不会出现多余信息，处理冲突更加自由）
 
 
+---
 
 ##### 合并你的 commits
 
@@ -133,6 +135,7 @@ pick 84c413a install skill: Fix skill pkg relative path.
 
 需要修改时，把上面四个补丁最前面的 pick 改成对应操作（如 reword，fixup），然后保存退出即可。
 
+---
 
 
 ## git stash 暂存更改
