@@ -4,6 +4,9 @@ layout: post
 comments: no
 ---
 
+一个平凡人.
+程序员生涯在 [LinkedIn](https://www.linkedin.com/in/yonghaohu) 可以查看.
+
 Experienced in C, C++ and PHP, familiar with  HTML,CSS and Javascript Web design and We-chat development.
 
 Contributor of WineHQ, had sent more than 20 patches about VC++ runtime(msvcr/msvcp). Some of them are the implementation of tr2::Filesystem Library, tests of tr2::Threads and implementation of complex istream and ostream::operator. See  http://source.winehq.org/git/wine.git/?a=search&h=HEAD&st=author&s=YongHao+Hu&sr=1
@@ -16,7 +19,7 @@ Objective: Seeking for intern in C/C++, PHP or Python area. Full-Time available 
 
 ----
 
-###Contact Me        
+### Contact Me        
 
 Email:   [christopherwuy@gmail.com](mailto:christopherwuy@gmail.com) 
 
