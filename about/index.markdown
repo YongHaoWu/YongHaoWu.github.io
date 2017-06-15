@@ -6,6 +6,7 @@ comments: no
 
 一个平凡人.
 程序员生涯在 [LinkedIn](https://www.linkedin.com/in/yonghaohu) 可以查看.
+目前在打造一个有干货的讨论组, 有兴趣请加 QQ 群:170418411
 
 Experienced in C, C++ and PHP, familiar with  HTML,CSS and Javascript Web design and We-chat development.
 
