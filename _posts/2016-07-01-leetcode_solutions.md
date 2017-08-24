@@ -255,3 +255,40 @@ public:
     }
 };
 ```
+
+### 204. [Count Primes](https://leetcode.com/problems/count-primes/)
+
+> Count the number of prime numbers less than a non-negative number, n.
+
+Table is often used in ACM to improve a program's performance.
+It's a important skill to generate all the Composite numbers, e.g,
+
+```
+i=2 =>4,6,8,10,12
+i=3 =>9,12,15,18,21
+i=4 =>16,20,24,28,32,36
+
+for(int j=i*i; j<n; j+=i)
+    is_prime[j] = 0;
+```
+
+One tip is to use ```i*i``` instead of ```sqrt(n)```.
+
+```
+class Solution {
+public:
+    int countPrimes(int n) {
+        int res = 0;
+        vector<int> is_prime(n, 1);
+        for(int i=2; i*i<n; ++i) {
+            if(!is_prime[i])
+                continue;
+            res++;
+            for(int j=i*i; j<n; j+=i) {
+                is_prime[j] = 0;
+            }
+        }
+        return res;
+    }
+};
+```
