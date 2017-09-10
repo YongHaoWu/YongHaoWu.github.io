@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  你们仍未掌握那天所学的 git 知识
-description: 不信？ 试试你能回答出以下问题不：
+description: 不信？ 试试你能回答出以下问题不
 categories:
 - 技术
 tags:
@@ -77,7 +77,7 @@ git merge gakki/master feat-add-lister //把 gakki 的 master 分支 merge 到 f
 
 ##### 合并你的 commits
 
-```bas
+```
 Author: YongHao Hu <hyh@vincross.com>
 Date:   Fri Dec 23 17:55:49 2016 +0800
 
