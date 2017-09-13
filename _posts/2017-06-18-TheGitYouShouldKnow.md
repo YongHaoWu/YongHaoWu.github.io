@@ -71,7 +71,7 @@ git fetch gakki          //把 gakki 仓库的东西都拉下来本地
 git merge gakki/master feat-add-lister //把 gakki 的 master 分支 merge 到 feat-add-lister
 ```
 
- 因为 pull 的时候， 当出现冲突而你解决掉后，会有多余的`merge`信息（commit message），所以我是推荐在自己的分支开发时，使用`git fetch gakki && git rebase gakki/master feat-add-lister`（不会出现多余信息， 处理冲突更加自由） 
+因为 pull 的时候， 当出现冲突而你解决掉后，会有多余的`merge`信息（commit message），所以我是推荐在自己的分支开发时，使用`git fetch gakki && git rebase gakki/master feat-add-lister` （不会出现多余信息，处理冲突更加自由）
 
 ---
 
