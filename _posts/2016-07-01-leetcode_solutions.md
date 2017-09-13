@@ -8,13 +8,13 @@ tags:
 - C++
 ---
 
-##344. [Reverse String](https://leetcode.com/problems/reverse-string/)
+## 344. [Reverse String](https://leetcode.com/problems/reverse-string/)
 
 > Write a function that takes a string as input and returns the string reversed.
 > Example:
 > Given s = "hello", return "olleh".
 
-###Solution1(two pointers)
+### Solution1(two pointers)
 
 ```
 class Solution {
@@ -27,7 +27,7 @@ public:
 };
 ```
 
-###Solution2(recursion)
+### Solution2(recursion)
 
 ```
 class Solution {
@@ -53,7 +53,7 @@ public:
 The same as [Reverse String](https://leetcode.com/problems/reverse-string/), while we just need to switch the vowels. It is easy to come up with two pointers solution.
 Besides, we can use find_first_of and find_last_of method of string. 
 
-###Solution1(two pointers)
+### Solution1(two pointers)
 
 ```
 class Solution {
@@ -94,7 +94,8 @@ public:
     }
 };
 ```
-###Solution2(find_first_of)
+
+### Solution2(find_first_of)
 
 ```
 class Solution {
@@ -134,7 +135,7 @@ For example,
 (1010 & 000) = 0000
 ```
 
-###Solution1(using & and ^ to simulate add)
+### Solution1(using & and ^ to simulate add)
 
 ```
 class Solution {
@@ -184,7 +185,7 @@ class Solution {
 };
 ```
 
-###234. [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
+### 234. [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
 
 > Given a singly linked list, determine if it is a palindrome.
 
@@ -230,7 +231,7 @@ private:
 };
 ```
 
-###205. [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
+### 205. [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
 
 > Given two strings s and t, determine if they are isomorphic.
 > Two strings are isomorphic if the characters in s can be replaced to get t.
