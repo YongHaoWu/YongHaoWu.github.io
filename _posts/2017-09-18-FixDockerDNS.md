@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Docker apt update--解析 DNS 错误
-description: Temporary failure resolving archive.ubuntu.com.Some index files failed to download. They have been ignored, or old ones used instead.categories:
+title: Docker解析DNS错误
+description: Temporary failure resolving archive ubuntu com Some index files failed to download
 - 技术
 tags:
 - DNS
