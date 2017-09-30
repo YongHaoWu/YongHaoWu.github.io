@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker解析DNS错误
-description: Temporary failure resolving archive ubuntu com Some index files failed to download
+description: docker无法用 apt update
 - 技术
 tags:
 - DNS
