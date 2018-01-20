@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Docker解析DNS错误
-description: docker无法用 apt update
+description: none
 - 技术
 tags:
 - DNS
 ---
 
-尽管你在宿主机能够解析到`archive.ubuntu.com`, 
+尽管你在宿主机能够解析到`archive.ubuntu.com`,
 
 ```
 % nslookup archive.ubuntu.com
