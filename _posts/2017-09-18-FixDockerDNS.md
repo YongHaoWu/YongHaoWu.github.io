@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Docker 解析 DNS 错误
-description:  A bug
+title: Docker解析DNS错误
+description: A bug
 - 技术
 tags:
 - go
@@ -11,11 +11,11 @@ tags:
 
 ```
 % nslookup archive.ubuntu.com
-Server:		8.8.8.8
-Address:	8.8.8.8#53
+Server: 8.8.8.8
+Address: 8.8.8.8
 
 Non-authoritative answer:
-Name:	archive.ubuntu.com
+Name: archive.ubuntu.com
 Address: 10.18.75.45
 ```
 
