@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Docker解析DNS错误
-description: none
+title: Docker 解析 DNS 错误
+description:  A bug
 - 技术
 tags:
-- DNS
+- go
 ---
 
 尽管你在宿主机能够解析到`archive.ubuntu.com`,
