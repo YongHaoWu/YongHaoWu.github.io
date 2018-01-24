@@ -6,11 +6,11 @@ comments: no
 
 一个平凡人.
 程序员生涯在 [LinkedIn](https://www.linkedin.com/in/yonghaohu) 可以查看.
-目前在打造一个有干货的讨论组, 有兴趣请加 QQ 群:170418411
+[一个小演讲](https://www.youtube.com/watch?v=If8FjTkb06M&t=407s)
 
 Experienced in C, C++ and PHP, familiar with  HTML,CSS and Javascript Web design and We-chat development.
 
-Contributor of WineHQ, had sent more than 20 patches about VC++ runtime(msvcr/msvcp). Some of them are the implementation of tr2::Filesystem Library, tests of tr2::Threads and implementation of complex istream and ostream::operator. See  http://source.winehq.org/git/wine.git/?a=search&h=HEAD&st=author&s=YongHao+Hu&sr=1
+Contributor of WineHQ, had sent more than 50 patches about VC++ runtime(msvcr/msvcp). Some of them are the implementation of tr2::Filesystem Library, tests of tr2::Threads and implementation of complex istream and ostream::operator. See  http://source.winehq.org/git/wine.git/?a=search&h=HEAD&st=author&s=YongHao+Hu&sr=1
 
 Accepted by Google Summer Of Code 2015, project is implementing Filesystem functions from tr2 namespace on Wine.
 
