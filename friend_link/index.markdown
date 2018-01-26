@@ -11,6 +11,7 @@ title: 友情链接们
 
 * [VOID001's WOWO](http://120.27.97.96/)
 * [瓜](https://desgard.com/)
+* [laike9m's blog ](https://laike9m.com/)
 
 
 备用网站:
