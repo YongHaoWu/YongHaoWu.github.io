@@ -46,7 +46,7 @@ tags:
 ---
   
 
-## iptalbes
+## iptables
 Linux 本身就能够做一个 NAT，你知道吗？
 
 想想 docker 是怎么样访问外部网络的？docker 里的 container（容器）都是内网10.xx.xx.xx，宿主机是怎么样与内网通信呢？
