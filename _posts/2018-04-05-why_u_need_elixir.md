@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 为什么你一定需要学习 Elixir？
-description: Elixir 是一门基于 erlang 开发的新语言，复用了 erlang 的虚拟机以及全部库（站在已经生存了20多年巨人的肩膀上），定义了全新的语法以及构造了现代语言必不可少生态环境—包管理器，测试工具，formatter等。使用 Elixir，你可以方便的构建可用性高达99.9999以及天然分布式的程序（代码随手一写就是稳定的分布式），可以秒开成千上万 Elixir 里专属的进程（比起系统的进程更轻量级），处理高并发请求等等。
+description: Elixir 是一门基于 erlang 开发的新语言，复用了 erlang 的虚拟机以及全部库
 categories:
 - 技术
 tags:
