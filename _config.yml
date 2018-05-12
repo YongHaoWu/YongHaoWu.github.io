@@ -12,7 +12,7 @@ safe: false
 title: For The Best Thing In The World
 subTitle:  Work Hard to Enjoy Them.
 description: 写东西的Cache
-url: http://yonghaowu.github.io/
+url: https://yonghaowu.github.io/
 feed: /atom.xml
 
 #菜单配置
@@ -37,11 +37,11 @@ themes: /themes/violet
 
 #配置你喜欢的顶部背景图片
 headimg:
-  - item: http://gtms02.alicdn.com/tps/i2/T1PObnFqBdXXcryKEg-1280-200.jpg
-  - item: http://gtms03.alicdn.com/tps/i3/T1U_YlFAlcXXbErygJ-2048-260.jpg
-  - item: http://gtms04.alicdn.com/tps/i4/T1K0LLFvVbXXbErygJ-2048-260.jpg
-  - item: http://gtms01.alicdn.com/tps/i1/T12DHKFx4bXXbErygJ-2048-260.jpg
-  - item: http://av.jejeso.com/soranokiseki.jpg
+  - item: https://gtms02.alicdn.com/tps/i2/T1PObnFqBdXXcryKEg-1280-200.jpg
+  - item: https://gtms03.alicdn.com/tps/i3/T1U_YlFAlcXXbErygJ-2048-260.jpg
+  - item: https://gtms04.alicdn.com/tps/i4/T1K0LLFvVbXXbErygJ-2048-260.jpg
+  - item: https://gtms01.alicdn.com/tps/i1/T12DHKFx4bXXbErygJ-2048-260.jpg
+  - item: https://av.jejeso.com/soranokiseki.jpg
 #关注我
 follow:
 
@@ -50,7 +50,7 @@ follow:
   - class: fa-twitter
     url: https://twitter.com/YongHao_Hu
   - class: fa-rss
-    url: http://yonghaowu.github.io/atom.xml
+    url: https://yonghaowu.github.io/atom.xml
 
 #作者信息
 author:
