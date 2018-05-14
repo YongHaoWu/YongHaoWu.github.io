@@ -5,7 +5,7 @@ comments: no
 ---
 
 <a href="https://stackoverflow.com/users/4206629/yonghao-hu">
-<img src="https://stackoverflow.com/users/flair/4206629.png" width="208" height="58" alt="profile for YongHao Hu at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for YongHao Hu at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+<img src="https://stackoverflow.com/users/flair/4206629.png" width="108" height="28" alt="profile for YongHao Hu at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for YongHao Hu at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
 </a>
 
 一个平凡人.
