@@ -4,6 +4,10 @@ layout: post
 comments: no
 ---
 
+<a href="https://stackoverflow.com/users/4206629/yonghao-hu">
+<img src="https://stackoverflow.com/users/flair/4206629.png" width="208" height="58" alt="profile for YongHao Hu at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for YongHao Hu at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
+
 一个平凡人.
 程序员生涯在 [LinkedIn](https://www.linkedin.com/in/yonghaohu) 可以查看.
 [一个小演讲](https://www.youtube.com/watch?v=If8FjTkb06M&t=407s)
