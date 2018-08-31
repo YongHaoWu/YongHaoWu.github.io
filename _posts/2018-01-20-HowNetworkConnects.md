@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 网络是如何连接的
-description:
+description: 我的编程生涯里，似乎也没有被网络所困扰。不懂得各种原理，似乎用框架，查查 stackoverflow，Google 挖个遍，也可以 6666. 不做底层的咸鱼，怎么会需要原理呢，我学的什么编译链接，session，segment，，内存管理也不过是镜中花，水里月
+categories:
 - 技术
 tags:
 - DNS
