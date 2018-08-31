@@ -8,6 +8,8 @@ title: life
 wordpress_id: 529
 ---
 
+ 我的其他非技术文章,请看[简书](https://www.jianshu.com/u/581e3220be07)
+
 跟女朋友科普动漫等时, 发现自己竟然算是这方面比较擅长的, 我也是醉了.
 
 到现在为止, 我看过了[167本书](https://book.douban.com/people/56688445/collect), [125部动漫, 电影, 电视](https://movie.douban.com/people/56688445/collect).
