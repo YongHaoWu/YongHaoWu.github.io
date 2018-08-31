@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 内网是你的谎言
-description: 关于NAT你所不知道的一切
+description: 关于NAT你所不知道的一切, 作为程序员，我们都知道，ipv4地址很早就不够用了，然后有一项技术，可以内网用同一个外网 ip——是的，那就是 NAT（Network Address Translation），网络地址交换技术。
 categories:
 - 技术
 tags:
