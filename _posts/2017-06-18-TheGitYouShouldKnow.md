@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  你们仍未掌握那天所学的 git 知识
-description: 不信？ 试试你能回答出以下问题不
+description: 绝大多数人对于 git的认识只停留在`git status`, `git add`, `git push`, `git pull`, 好一点会知道`git merge`, 那就是全部了。不信？ 试试你能回答出以下问题不
 categories:
 - 技术
 tags:
