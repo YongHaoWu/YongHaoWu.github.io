@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 从限流谈到伪造 IP（nginx remote_addr
+title: 从限流谈到伪造 IP nginx remote_addr
 description: 
 categories:
 - 技术
