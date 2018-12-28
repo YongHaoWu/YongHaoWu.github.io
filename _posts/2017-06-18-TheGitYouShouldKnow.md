@@ -33,19 +33,19 @@ tags:
 
 初始创建一个 github 仓库时，github 会给一些命令你去创建 git本地项目，`git init`就不用说了，`  git remote add origin git@github.com:YongHaoWu/test.git` 你知道这里的 origin 是什么吗？
 
-是的，就仅仅是一个名字，对`git@github.com:YongHaoWu/test.git` 这个 ssh 地址的命名，你可以把 `origin`命名为 `gakki` —— `  git remote add gakki git@github.com:YongHaoWu/test.git`, 以后就可以用`git push gakki master`了。
+是的，就仅仅是一个名字，对`git@github.com:YongHaoWu/test.git` 这个 ssh 地址的命名，你可以把 `origin`命名为 `gakki` —— `git remote add gakki git@github.com:YongHaoWu/test.git`, 以后就可以用`git push gakki master`了。
 
-另外，你还可以 `add`好几个名字，比如：你在 github 跟coding 同样都有仓库放代码的情况。
+另外，你还可以`add`好几个名字，比如：你在 github 跟coding 同样都有仓库放代码的情况。
 
 
 
-`  git push -u origin master` , 这里就是把 master（默认 git 分支）推送到 origin， `-u`也就是`--set-upstream`, 代表的是更新默认推送的地方，这里就是默认以后`git pull`和`git push`时，都是推送和拉自 origin 。
+`git push -u origin master` , 这里就是把 master（默认 git 分支）推送到 origin， `-u`也就是`--set-upstream`, 代表的是更新默认推送的地方，这里就是默认以后`git pull`和`git push`时，都是推送和拉自`origin`。
 
 ---
 
 #### 令 commit 更漂亮
 
-对于 git 工作流，我认为commit 数要多而有意义，branch 也要多而有意义——也就是，一个小功能就要开一个分支，一个分支里要有一些有意义的 commit。 好处就是冲突会很少，review 代码速度加快，commit 都是有意义的，而且利于回退。
+对于 git 工作流，我认为 commit 数要多而有意义，branch 也要多而有意义——也就是，一个小功能就要开一个分支，一个分支里要有一些有意义的 commit。 好处就是冲突会很少，review 代码速度加快，commit 都是有意义的，而且利于回退。
 
 要做到这些，离不开掌握`git rebase`
 
@@ -71,7 +71,7 @@ git fetch gakki          //把 gakki 仓库的东西都拉下来本地
 git merge gakki/master feat-add-lister //把 gakki 的 master 分支 merge 到 feat-add-lister
 ```
 
-因为 pull 的时候， 当出现冲突而你解决掉后，会有多余的`merge`信息（commit message），所以我是推荐在自己的分支开发时，使用`git fetch gakki`  以及 `git rebase gakki/master feat-add-lister` （不会出现多余信息，处理冲突更加自由）
+因为 pull 的时候， 当出现冲突而你解决掉后，会有多余的`merge`信息（commit message），所以我是推荐在自己的分支开发时，使用`git fetch gakki`  以及 `git rebase gakki/master feat-add-lister` （不会出现多余信息，处理冲突更加自由） 这两条命令的合并版就是: `git pull -r gakki/master feat-add-lister`, `-r` 意思是在 pull 的时候,使用 rebase.
 
 ---
 
