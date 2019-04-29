@@ -9,7 +9,6 @@ comments: no
 </a>
 
 一个平凡人.
-程序员生涯在 [LinkedIn](https://www.linkedin.com/in/yonghaohu) 可以查看.
 [一个小演讲](https://www.youtube.com/watch?v=If8FjTkb06M&t=407s)
 
 Experienced in C, C++ and PHP, familiar with  HTML,CSS and Javascript Web design and We-chat development.
@@ -28,10 +27,6 @@ Objective: Seeking for intern in C/C++, PHP or Python area. Full-Time available 
 
 Email:   [christopherwuy@gmail.com](mailto:christopherwuy@gmail.com) 
 
-douban: [YongHao_Hu](https://www.douban.com/people/56688445/)
-
 zhihu: [YongHao_Hu](https://www.zhihu.com/people/hu-yong-hao-49)
-
-Twitter: [YongHao_Hu](http://twitter.com/YongHao_Hu)
 
 ----
