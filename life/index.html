@@ -203,6 +203,8 @@ Error message and password prompt
 
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
+<li>$:/config/EditorTypeMappings/text/x-markdown</li>
+
 <li>$:/config/markdown/renderWikiTextPragma</li>
 
 <li>$:/config/Navigation/openLinkFromInsideRiver</li>
@@ -422,6 +424,10 @@ Error message and password prompt
 <li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
 
 <li>$:/state/tree/$:/.giffmex/</li>
+
+<li>$:/state/tree/$:/config/</li>
+
+<li>$:/state/tree/$:/config/markdown/</li>
 
 <li>$:/status/IsAnonymous</li>
 
@@ -681,9 +687,15 @@ Error message and password prompt
 
 <li>Autocompletion</li>
 
+<li>CIDR</li>
+
+<li>CIDR 1</li>
+
 <li>Dave Gifford</li>
 
 <li>Download Stroll</li>
+
+<li>etcd 无法watch</li>
 
 <li>Get goodies</li>
 
@@ -711,11 +723,15 @@ Error message and password prompt
 
 <li>Linux Signal</li>
 
+<li>Merkle tree</li>
+
 <li>Muffin 1</li>
 
 <li>Muffin 2</li>
 
 <li>Muffin!</li>
+
+<li>networks</li>
 
 <li>New tiddler linked here</li>
 
@@ -1090,7 +1106,7 @@ html body.tc-body .subtopicslate {color:#8888cc;font-weight: bold;font-size:18pt
 ```
 </pre>
 </div>
-<div created="20200504145211663" modified="20200617023711651" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
+<div created="20200504145211663" modified="20200617030811988" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
 <pre>{
     &quot;Hint for Muffin tutorial&quot;: &quot;hide&quot;,
     &quot;Muffin 1&quot;: &quot;hide&quot;,
@@ -1151,7 +1167,7 @@ html body.tc-body .subtopicslate {color:#8888cc;font-weight: bold;font-size:18pt
 <div caption="Hidden" created="20200502165303215" creator="Quick Config" modified="20200521151351420" modifier="Quick Config" tags="$:/giffmex/stroll $:/giffmex/blinks $:/giffmex/refs" title="$:/.giffmex/ViewTemplate/refshidden" type="application/x-tiddler">
 <pre></pre>
 </div>
-<div bag="default" caption="Simple links" created="20200126143031898" dummy="yes" modified="20200616170939735" revision="0" tags="$:/giffmex/blinks $:/giffmex/refs $:/giffmex/stroll" title="$:/.giffmex/ViewTemplate/refslinks" type="text/vnd.tiddlywiki">
+<div bag="default" caption="Simple links" created="20200126143031898" modified="20200617030824481" revision="0" tags="$:/giffmex/blinks $:/giffmex/refs $:/giffmex/stroll $:/tags/ViewTemplate" title="$:/.giffmex/ViewTemplate/refslinks" type="text/vnd.tiddlywiki">
 <pre>&lt;span class=&quot;viewtemplatebigtext&quot;&gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
@@ -1167,7 +1183,7 @@ html body.tc-body .subtopicslate {color:#8888cc;font-weight: bold;font-size:18pt
 
 &lt;/span&gt;</pre>
 </div>
-<div bag="default" caption="Full text" created="20200126142157739" dummy="yes" modified="20200616170947782" revision="0" tags="$:/giffmex/blinks $:/giffmex/refs $:/giffmex/stroll" title="$:/.giffmex/ViewTemplate/refstranscludeclean" type="text/vnd.tiddlywiki">
+<div bag="default" caption="Full text" created="20200126142157739" dummy="yes" modified="20200617030821366" revision="0" tags="$:/giffmex/blinks $:/giffmex/refs $:/giffmex/stroll" title="$:/.giffmex/ViewTemplate/refstranscludeclean" type="text/vnd.tiddlywiki">
 <pre>&lt;span class=&quot;viewtemplatebigtext&quot;&gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
@@ -1180,7 +1196,7 @@ html body.tc-body .subtopicslate {color:#8888cc;font-weight: bold;font-size:18pt
 
 &lt;/span&gt;</pre>
 </div>
-<div caption="Full text under sliders" created="20200126142157739" modified="20200616170947783" tags="$:/giffmex/blinks $:/giffmex/refs $:/giffmex/stroll $:/tags/ViewTemplate" title="$:/.giffmex/ViewTemplate/refstranscludecollapse">
+<div caption="Full text under sliders" created="20200126142157739" modified="20200617030824480" tags="$:/giffmex/blinks $:/giffmex/refs $:/giffmex/stroll" title="$:/.giffmex/ViewTemplate/refstranscludecollapse">
 <pre>&lt;span class=&quot;viewtemplatebigtext&quot;&gt;
 
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
@@ -1308,8 +1324,11 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
 <pre>comptext</pre>
 </div>
-<div created="20200527154435399" modified="20200527154435399" title="$:/config/markdown/renderWikiTextPragma">
-<pre></pre>
+<div created="20200617031604739" modified="20200617031614692" tags="" title="$:/config/EditorTypeMappings/text/x-markdown">
+<pre>comptext</pre>
+</div>
+<div created="20200527154435399" modified="20200617031818586" title="$:/config/markdown/renderWikiTextPragma">
+<pre>\rules only html image macrocallinline syslink transcludeinline wikilink filteredtranscludeblock macrocallblock transcludeblock prettylink</pre>
 </div>
 <div created="20200418141615149" modified="20200521145817395" tags="$:/giffmex/stroll" title="$:/config/Navigation/openLinkFromInsideRiver">
 <pre>top</pre>
@@ -10987,13 +11006,16 @@ NB: if you want no link, but at tooltip, use `&quot;&quot;` for a empty link.
 \end
 ```</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>下列条目已被导入：
-
-# [[$:/.giffmex/colors]]
-# [[$:/.giffmex/EditorToolbar/Wrap/spanclass]]
-# [[$:/.giffmex/icons/angle.icon.png]]
-# [[$:/.giffmex/Stylesheet/Colors]]</pre>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;&lt;meta charset='utf-8'&gt;&lt;span style=\&quot;color: rgb(51, 51, 51); font-family: -apple-system, system-ui, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;\&quot;&gt;&lt;span&gt; &lt;/span&gt;&lt;/span&gt;&lt;a class=\&quot;tc-tiddlylink tc-tiddlylink-resolves\&quot; href=\&quot;https://giffmex.org/stroll/stroll.html#%24%3A%2Fconfig%2Fmarkdown%2FrenderWikiTextPragma\&quot; style=\&quot;box-sizing: border-box; background-color: rgb(255, 255, 255); text-decoration: none; font-weight: 400; color: rgb(87, 120, 216); user-select: inherit; font-style: normal; font-family: -apple-system, system-ui, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 15px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;\&quot;&gt;$:/config/markdown/renderWikiTextPragma&lt;/a&gt;&quot;,
+            &quot;type&quot;: &quot;text/html&quot;
+        }
+    }
+}</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -17009,23 +17031,29 @@ exports.context = contextWidget;
 <div created="20200616155538724" modified="20200616155538724" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
 </div>
-<div created="20200418121928767" modified="20200617024738774" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20200418121928767" modified="20200617031909917" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200616144657561" modified="20200616145421832" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200418122101344" modified="20200616155540258" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/Recent</pre>
+<div created="20200418122101344" modified="20200617031729562" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200617023700597" title="$:/state/tab/sidebar--595412856">
-<pre>$:/.giffmex/sidebar/tabs/strollcontrols</pre>
+<div created="20200418121835270" modified="20200617041531057" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200504200956301" modified="20200504201043124" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
 </div>
 <div created="20200504154623789" modified="20200504154625935" title="$:/state/tree/$:/.giffmex/">
 <pre>hide</pre>
+</div>
+<div created="20200617031741516" modified="20200617031741516" title="$:/state/tree/$:/config/">
+<pre>show</pre>
+</div>
+<div created="20200617031746930" modified="20200617031746930" title="$:/state/tree/$:/config/markdown/">
+<pre>show</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/IsAnonymous">
 <pre>yes</pre>
@@ -17037,12 +17065,12 @@ exports.context = contextWidget;
 <pre>no</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200616161923329" list="$:/ControlPanel StrollTips [[Linux Signal]] Note" modified="20200617024736238" title="$:/StoryList">
+<div created="20200617031908007" list="[[etcd 无法watch]] CIDR Note" modified="20200617032012123" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521135635795" tags="$:/giffmex/bigeditarea" title="$:/tags/EditToolbar">
@@ -17118,7 +17146,7 @@ exports.context = contextWidget;
     }
 }</pre>
 </div>
-<div created="20200418122623650" modified="20200617023623488" title="$:/temp/NewTagName">
+<div created="20200418122623650" modified="20200617041617359" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200616152848736" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200616152848736" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -18077,13 +18105,13 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200606181414975" title="$:/temp/search">
-<pre></pre>
+<div created="20200418122544376" modified="20200617031702439" title="$:/temp/search">
+<pre> $:/config/markdown/renderWikiTextPragma</pre>
 </div>
 <div created="20200616183644116" modified="20200616183644116" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200616161922967" modified="20200617023712057" title="$:/temp/tobibeer/preview-1-tiddler">
+<div created="20200616161922967" modified="20200617031838525" title="$:/temp/tobibeer/preview-1-tiddler">
 <pre>Linux Signal</pre>
 </div>
 <div bag="default" created="20200414145220556" modified="20200616183714956" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
@@ -18294,6 +18322,21 @@ Go back to viewing mode, click the link you created to the `Dave Gifford` tiddle
 
 When you are done here, return to [[Welcome to Stroll]] to continue the tutorial.</pre>
 </div>
+<div created="20200617040925395" modified="20200617041105040" tags="network" title="CIDR" type="text/x-markdown">
+<pre>[[Note]]
+
+In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. Classes A, B, and C have their own IP address ranges, default subnet masks, a maximum number of hosts, and private address ranges. Classes D and E have their own IP address ranges but do not require the other attributes. First, let's look at classes A, B, and C:
+
+![Figure 11.3: Classes A, B, and C classful network](https://learning.oreilly.com/library/view/networking-fundamentals/9781838643508/assets/593561d8-07c5-4511-99e7-f5179eab476c.png)
+
+
+&gt; I have written the subnet masks in a dotted-decimal format and as a slash notation, that is, /8, /16, /24. This is often also referred to as [[CIDR]] notation. We will cover [[CIDR]] in more detail shortly. What this slash notation is telling us is the number of bits that have been allocated to the subnet mask (or network element). Therefore, Class A has 8 bits allocated to the network element, Class B has 16 bits, and Class C has 24 bits.
+
+</pre>
+</div>
+<div created="20200617041105043" modified="20200617041105043" title="CIDR 1">
+<pre></pre>
+</div>
 <div created="20200423144522416" modified="20200521145919666" tags="$:/giffmex/tutorials" title="Dave Gifford">
 <pre>Congratulations! You found the tiddler with my name. See the links below in the reference section (below the horizontal line)? Good. 
 
@@ -18318,6 +18361,9 @@ Now go back to [[Welcome to Stroll]] to continue the tutorial.</pre>
 
 *There may be a few steps involved for you to get Stroll to save changes the way you want it to. And everything depends on which browser you use and whether you use Stroll as a single file wiki, hosted online, with the ~TiddlyDesktop, or with node.js. See ~TiddlyWiki's documentation [[here|https://tiddlywiki.com/#GettingStarted]].</pre>
 </div>
+<div created="20200617041601630" modified="20200617041630776" tags="etcd" title="etcd 无法watch" type="text/x-markdown">
+<pre>[auth token invalid after watch reconnects](https://github.com/etcd-io/etcd/issues/11954)</pre>
+</div>
 <div created="20200423155907224" modified="20200521145920849" tags="$:/giffmex/tutorials" title="Get goodies">
 <pre>Stroll's best kept secrets are the many ways you can extend and refine it!
 
@@ -18333,8 +18379,9 @@ Now go back to [[Welcome to Stroll]] to continue the tutorial.</pre>
 <div created="20200616145626358" modified="20200616145626358" title="golang">
 <pre></pre>
 </div>
-<div created="20200617023510669" modified="20200617023648260" tags="golang ci" title="golang ci runner" type="text/x-markdown">
-<pre>&gt; https://sum.golang.org/lookup/git.garena.com/common/gommon/logger@v0.0.0-20200110033305-14259450ba18
+<div created="20200617023510669" modified="20200617031517223" tags="golang ci" title="golang ci runner" type="text/x-markdown">
+<pre>[[Note]]
+&gt; https://sum.golang.org/lookup/git.garena.com/common/gommon/logger@v0.0.0-20200110033305-14259450ba18
 
 不是DNS的问题，是[[golang]] private没设置对，去golang那边去找包了，然后解析不了`git.garena.com`.
 
@@ -18482,6 +18529,15 @@ One more thing about linking: if you change the name of a tiddler, all the links
 [[golang]] [[http server]] 没有忽略[[linux]]信号[[SIGPIPE]] broken pipe signal，导致程序exit。 
 [这里有一个issue](https://github.com/flike/kingshard/issues/227)</pre>
 </div>
+<div created="20200617041259877" modified="20200617041524137" tags="algorithm" title="Merkle tree" type="text/x-markdown">
+<pre>[[Note]]
+
+[One of the benefits is that it is easier and cheaper to check the integrity of the partial data when we use a Merkel tree.](https://learning.oreilly.com/library/view/hands-on-blockchain-for/9781788627856/665690d5-116d-47e9-a18a-410a49ddcad8.xhtml)
+
+![](https://learning.oreilly.com/library/view/hands-on-blockchain-for/9781788627856/assets/1dc3424f-2b27-496c-9b53-600829a14d09.png)
+
+&gt; If you use a naive approach, you need to download all the hashes of the data (Data 1 to Data 8) and the Root Hash. In this example, we only have eight pieces of data. Imagine if we had 100 and you had to download the entire dataset. Merkle trees makes this process more efficient because we don't need to download the full set of data.</pre>
+</div>
 <div created="20200503152009946" modified="20200521145922788" tags="$:/giffmex/tutorials" title="Muffin 1">
 <pre>[[Muffin!]] [img width=&quot;30%&quot; [https://giffmex.org/images/muffin1.JPG]]</pre>
 </div>
@@ -18492,6 +18548,9 @@ One more thing about linking: if you change the name of a tiddler, all the links
 <pre>Clicking the various checkboxes in the {{$:/core/images/preview-open}} tab in the sidebar will change the appearance of the items in the references section (the list of backlinks) at the bottom of this tiddler. 
 
 When you are done playing with my dog, return to [[Welcome to Stroll]] to continue the tutorial.</pre>
+</div>
+<div created="20200617041105043" modified="20200617041105043" title="networks">
+<pre></pre>
 </div>
 <div created="20200423153701937" modified="20200521145920147" tags="$:/giffmex/tutorials" title="New tiddler linked here">
 <pre>The two blue buttons at the top create new tiddlers that link to the tiddler from which they were created.
