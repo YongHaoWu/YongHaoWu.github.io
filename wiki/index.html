@@ -699,6 +699,10 @@ Error message and password prompt
 
 <li>CIDR</li>
 
+<li>concept</li>
+
+<li>concept 1</li>
+
 <li>Dave Gifford</li>
 
 <li>Download Stroll</li>
@@ -722,6 +726,8 @@ Error message and password prompt
 <li>Hint for Muffin tutorial</li>
 
 <li>http server</li>
+
+<li>Idempotence</li>
 
 <li>Linking in Stroll, part 1</li>
 
@@ -752,6 +758,8 @@ Error message and password prompt
 <li>PublishSite</li>
 
 <li>Recent updates to Stroll</li>
+
+<li>Reentrancy</li>
 
 <li>RenameTags</li>
 
@@ -17095,7 +17103,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200619175138680" list="PublishSite StrollTips musl Note" modified="20200619184219256" title="$:/StoryList">
+<div created="20200619175138680" list="concept" modified="20200619184219256" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521135635795" tags="$:/giffmex/bigeditarea" title="$:/tags/EditToolbar">
@@ -18365,6 +18373,30 @@ In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. C
 
 </pre>
 </div>
+<div created="20200619184445503" modified="20200619184650741" tags="" title="concept" type="text/x-markdown">
+<pre>[[Note]]
+[[concept]]
+
+### 可重入 （[[Reentrancy]]）
+
+In [computing](https://www.wikiwand.com/en/Computing), a [computer program](https://www.wikiwand.com/en/Computer_program) or [subroutine](https://www.wikiwand.com/en/Subroutine) is called **reentrant** if multiple invocations can safely run concurrently. 
+
+[[Reentrancy]] is not the same thing as [idempotence](https://www.wikiwand.com/en/Idempotence), in which the function may be called more than once yet generate exactly the same output as if it had only been called once. 
+
+
+
+#### 幂等性（[[Idempotence]]）
+
+**Idempotence** whereby they can be applied multiple times without changing the result beyond the initial application. 
+
+
+
+- in [imperative programming](https://www.wikiwand.com/en/Imperative_programming), a [subroutine](https://www.wikiwand.com/en/Subroutine) with [side effects](https://www.wikiwand.com/en/Side_effect_(computer_science)) is idempotent if the system state remains the same after one or several calls, in other words if the function from the system state space to itself associated to the subroutine is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition);
+- in [functional programming](https://www.wikiwand.com/en/Functional_programming), a [pure function](https://www.wikiwand.com/en/Pure_function) is idempotent if it is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition).</pre>
+</div>
+<div created="20200619184650745" modified="20200619184650745" title="concept 1">
+<pre></pre>
+</div>
 <div created="20200423144522416" modified="20200521145919666" tags="$:/giffmex/tutorials" title="Dave Gifford">
 <pre>Congratulations! You found the tiddler with my name. See the links below in the reference section (below the horizontal line)? Good. 
 
@@ -18511,6 +18543,9 @@ Blessings,
 <pre>&lt;br&gt;Try it out on &lt;span class=&quot;blue&quot;&gt;[[Muffin!]]&lt;/span&gt;</pre>
 </div>
 <div created="20200616145626359" modified="20200616145626359" title="http server">
+<pre></pre>
+</div>
+<div created="20200619184650746" modified="20200619184650746" title="Idempotence">
 <pre></pre>
 </div>
 <div created="20200423143727948" modified="20200521145919428" tags="$:/giffmex/tutorials" title="Linking in Stroll, part 1">
@@ -18671,6 +18706,9 @@ Click the buttons in any tiddler to see the tiddlers they create. Save changes. 
 *Added documentation for disabling autocomplete for iOS, etc, and additional explanation about importing the 'blinks' tag pill to one's own ~TiddlyWiki file.
 
 *Added the present 'Updates to Stroll' tab.</pre>
+</div>
+<div created="20200619184650746" modified="20200619184650746" title="Reentrancy">
+<pre></pre>
 </div>
 <div created="20140114170004978" creator="Stephan Hradek" description="A great trick invented by Alberto Molina to search and replace tags." modified="20200521150920458" modifier="Stephan Hradek" title="RenameTags">
 <pre>This great trick was shown to the tiddlywiki google group by [[Alberto Molina|https://groups.google.com/forum/#!topic/tiddlywiki/OCntQ79DuwM]]. I enhanced it a bit.
