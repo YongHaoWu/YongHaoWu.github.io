@@ -701,6 +701,8 @@ Error message and password prompt
 
 <li>concept</li>
 
+<li>Concept</li>
+
 <li>concept 1</li>
 
 <li>Dave Gifford</li>
@@ -755,6 +757,8 @@ Error message and password prompt
 
 <li>Note</li>
 
+<li>PCB</li>
+
 <li>PublishSite</li>
 
 <li>Recent updates to Stroll</li>
@@ -764,6 +768,8 @@ Error message and password prompt
 <li>RenameTags</li>
 
 <li>Revision May 4, 2020</li>
+
+<li>SIGINT</li>
 
 <li>SIGPIPE</li>
 
@@ -788,6 +794,8 @@ Error message and password prompt
 <li>Using tiddlers</li>
 
 <li>Welcome to Stroll</li>
+
+<li>信号的基本概念</li>
 
 </ul>
 </p>
@@ -17103,7 +17111,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200619175138680" list="concept" modified="20200619184219256" title="$:/StoryList">
+<div created="20200619175138680" list="信号的基本概念 concept" modified="20200619184700211" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521135635795" tags="$:/giffmex/bigeditarea" title="$:/tags/EditToolbar">
@@ -18144,8 +18152,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200616183644116" modified="20200616183644116" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200616161922967" modified="20200619175634097" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>CIDR</pre>
+<div created="20200616161922967" modified="20200619184655167" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>concept</pre>
 </div>
 <div bag="default" created="20200414145220556" modified="20200616183714956" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/tiddlywiki/seamless</pre>
@@ -18393,6 +18401,9 @@ In [computing](https://www.wikiwand.com/en/Computing), a [computer program](http
 
 - in [imperative programming](https://www.wikiwand.com/en/Imperative_programming), a [subroutine](https://www.wikiwand.com/en/Subroutine) with [side effects](https://www.wikiwand.com/en/Side_effect_(computer_science)) is idempotent if the system state remains the same after one or several calls, in other words if the function from the system state space to itself associated to the subroutine is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition);
 - in [functional programming](https://www.wikiwand.com/en/Functional_programming), a [pure function](https://www.wikiwand.com/en/Pure_function) is idempotent if it is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition).</pre>
+</div>
+<div created="20200619185106853" modified="20200619185106853" title="Concept">
+<pre></pre>
 </div>
 <div created="20200619184650745" modified="20200619184650745" title="concept 1">
 <pre></pre>
@@ -18661,6 +18672,9 @@ Click the buttons in any tiddler to see the tiddlers they create. Save changes. 
 <div created="20200616145438998" modified="20200616145438998" title="Note">
 <pre></pre>
 </div>
+<div created="20200619185106854" modified="20200619185106854" title="PCB">
+<pre></pre>
+</div>
 <div created="20200619184117891" modified="20200619184117891" title="PublishSite">
 <pre></pre>
 </div>
@@ -18748,6 +18762,9 @@ Click the buttons in any tiddler to see the tiddlers they create. Save changes. 
 *Wording of Two columns easier to read
 *Locking and viewing titles moved to an 'advanced' tutorial tiddler, and made easier to use in the gear tab in the sidebar.
 *[[Stroll layout cheat sheet]]</pre>
+</div>
+<div created="20200619185106853" modified="20200619185106853" title="SIGINT">
+<pre></pre>
 </div>
 <div created="20200616145626359" modified="20200616145626359" title="SIGPIPE">
 <pre></pre>
@@ -19022,6 +19039,16 @@ Click the &lt;&lt;icon {{$:/core/images/edit-button}} &quot;&quot;&gt;&gt; icon 
 </div>
 <div bag="default" created="20200128030902225" list="$:/_sq/Stories-overview" modified="20200521174009380" revision="0" tags="$:/giffmex/tutorials" title="Welcome to Stroll" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;tabs &quot;[[A stroll through Stroll]] [[The TiddlyWiki layout]] [[Using tiddlers]] [[Linking in Stroll, part 1]] [[Linking in Stroll, part 2]] [[Linking in Stroll, part 3]] [[New tiddler linked here]] [[Two columns]] [[Advanced stuff]] [[Troubleshooting]] [[Stroll vs Roam]] [[Recent updates to Stroll]] [[Download Stroll]] [[Updating Stroll]] [[Add Stroll to your TW]] [[Get goodies]] [[Help / Acknowledgments]] [[Help us]]&quot; &quot;[[A stroll through Stroll]]&quot; &quot;$:/state/strollhometabs&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
+</div>
+<div created="20200619184942925" modified="20200619185106850" tags="linux signal" title="信号的基本概念" type="text/x-markdown">
+<pre>[[Note]]
+[[Concept]]
+## 信号的基本概念
+1. 用户输入命令，在 Shell 下启动一个前台进程。
+2. 用户按下 Ctrl-C，这个键盘输入产生一个硬件中断。
+3. 如果 CPU 当前正在执行这个进程的代码，则该进程的用户空间代码暂停执行，CPU 从用户态切换到内核态处理硬件中断。
+4. 终端驱动程序将 Ctrl-C 解释成一个 [[SIGINT]] 信号，记在该进程的 [[PCB]] 中（也可以说发送了一个 [[SIGINT]]信号给该进程）。
+5. 当某个时刻要从内核返回到该进程的用户空间代码继续执行之前，首先处理  [[PCB]]  中记录的信号，发现有一个 [[SIGINT]]信号待处理，而这个信号的默认处理动作是终止进程，所以直接终止进程而不再返回它的用户空间代码执行。</pre>
 </div>
 
 
