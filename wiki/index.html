@@ -343,6 +343,8 @@ Error message and password prompt
 
 <li>$:/state/editpreviewtype</li>
 
+<li>$:/state/Excise/--800197511/new-title</li>
+
 <li>$:/state/folded/$:/.giffmex/ViewTemplate/refscontext</li>
 
 <li>$:/state/folded/$:/.giffmex/ViewTemplate/refslinks</li>
@@ -739,7 +741,7 @@ Error message and password prompt
 
 <li>golang 里踩过的坑</li>
 
-<li>Graceful exit</li>
+<li>graceful shutdown</li>
 
 <li>Help / Acknowledgments</li>
 
@@ -811,11 +813,17 @@ Error message and password prompt
 
 <li>Revision May 4, 2020</li>
 
+<li>SIGHUP</li>
+
 <li>SIGINT</li>
 
 <li>Signals list</li>
 
 <li>SIGPIPE</li>
+
+<li>SIGQUIT</li>
+
+<li>SIGSTOP</li>
 
 <li>stroll</li>
 
@@ -842,6 +850,8 @@ Error message and password prompt
 <li>信号的基本概念</li>
 
 <li>可重入vs幂等性</li>
+
+<li>听雨</li>
 
 <li>抽象</li>
 
@@ -17008,6 +17018,9 @@ exports.context = contextWidget;
 <div created="20200616170421212" modified="20200616170421212" title="$:/state/editpreviewtype">
 <pre>$:/core/ui/EditTemplate/body/preview/output</pre>
 </div>
+<div created="20200623022537018" modified="20200623022537018" title="$:/state/Excise/--800197511/new-title">
+<pre>(</pre>
+</div>
 <div created="20200521151559053" modified="20200521151606966" title="$:/state/folded/$:/.giffmex/ViewTemplate/refscontext">
 <pre>hide</pre>
 </div>
@@ -17161,7 +17174,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200619175138680" list="[[Restarting without closing the socket]] [[Linux Signal]] [[Graceful exit]] [[golang 里踩过的坑]] [[eru failed]]" modified="20200622164151175" title="$:/StoryList">
+<div created="20200619175138680" list="[[Restarting without closing the socket]] [[Linux Signal]] [[graceful shutdown]] 听雨 SIGQUIT SIGSTOP SIGHUP" modified="20200623022925706" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521135635795" tags="$:/giffmex/bigeditarea" title="$:/tags/EditToolbar">
@@ -17237,7 +17250,7 @@ exports.context = contextWidget;
     }
 }</pre>
 </div>
-<div created="20200418122623650" modified="20200621074243690" title="$:/temp/NewTagName">
+<div created="20200418122623650" modified="20200623022102230" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200616152848736" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200616152848736" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -18196,14 +18209,14 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200622164142295" title="$:/temp/search">
-<pre>grace</pre>
+<div created="20200418122544376" modified="20200623022858991" title="$:/temp/search">
+<pre>graceful exit</pre>
 </div>
 <div created="20200616183644116" modified="20200616183644116" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200616161922967" modified="20200622164150941" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>Linux Signal</pre>
+<div created="20200616161922967" modified="20200623022648392" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>SIGINT</pre>
 </div>
 <div bag="default" created="20200414145220556" modified="20200616183714956" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/tiddlywiki/seamless</pre>
@@ -18617,7 +18630,7 @@ switch a, b:
 
 </pre>
 </div>
-<div created="20200616161806949" modified="20200616161806949" title="Graceful exit">
+<div created="20200616161806949" modified="20200623022851176" title="graceful shutdown">
 <pre></pre>
 </div>
 <div created="20200423160022247" modified="20200606181237575" tags="$:/giffmex/tutorials" title="Help / Acknowledgments">
@@ -18727,9 +18740,9 @@ One more thing about linking: if you change the name of a tiddler, all the links
 <div created="20200616145626359" modified="20200616145626359" title="linux">
 <pre></pre>
 </div>
-<div created="20200616155602246" modified="20200616184034865" tags="signal linux golang" title="Linux Signal" type="text/x-markdown">
+<div created="20200616155602246" modified="20200623022920063" tags="signal linux golang" title="Linux Signal" type="text/x-markdown">
 <pre>[[Note]] 
-[[Graceful exit]]
+[[graceful shutdown]]
 
 &gt; When send() is called on a socket that has already received an RST message from its peer. On Unix-based systems, the default is to send a SIGPIPE signal to your program. If you don't handle this signal, the operating system will terminate your program.
 
@@ -18910,9 +18923,9 @@ Click the buttons in any tiddler to see the tiddlers they create. Save changes. 
 <div created="20200621042537590" modified="20200621042537590" title="Resources">
 <pre></pre>
 </div>
-<div created="20200622164219542" modified="20200622164937663" tags="" title="Restarting without closing the socket" type="text/x-markdown">
+<div created="20200622164219542" modified="20200623022950670" tags="Quote" title="Restarting without closing the socket" type="text/x-markdown">
 <pre>[[Note]]
-[[Graceful exit]]
+[[graceful shutdown]]
 ## 原理
 * 从目标进程处fork进程，它会集成监听socket；
 * 子进程初始化，基于旧socket接收新连接；
@@ -18934,30 +18947,38 @@ Click the buttons in any tiddler to see the tiddlers they create. Save changes. 
 *Locking and viewing titles moved to an 'advanced' tutorial tiddler, and made easier to use in the gear tab in the sidebar.
 *[[Stroll layout cheat sheet]]</pre>
 </div>
-<div created="20200619185106853" modified="20200619185106853" title="SIGINT">
+<div created="20200623021423346" modified="20200623022812666" tags="concept" title="SIGHUP" type="text/x-markdown">
+<pre>[[Note]]
+- SIGHUP -- *hangup*
+  Tells the program that the user disconnected (e.g. SSH session or terminal window was closed).
+  Usually does a [[graceful shutdown]] of the program.
+</pre>
+</div>
+<div created="20200619185106853" modified="20200623022631509" tags="concept" title="SIGINT" type="text/x-markdown">
+<pre>## SIGINT(interrupt)
+
+Sent when you hit CTRL+C
+Usually means &quot;stop what you're doing&quot; -- may or may not kill the program</pre>
+</div>
+<div created="20200619185353605" modified="20200623021239856" tags="" title="Signals list" type="text/x-markdown">
 <pre></pre>
 </div>
-<div created="20200619185353605" modified="20200619185550064" tags="" title="Signals list" type="text/x-markdown">
-<pre>## Signals
-
-- **SIGHUP** -- *hangup*
-  Tells the program that the user disconnected (e.g. SSH session or terminal window was closed).
-  Usually does a graceful shutdown of the program.
-- [[SIGINT]] -- *interrupt*
-  Sent when you hit CTRL+C
-  Usually means &quot;stop what you're doing&quot; -- may or may not kill the program
-- **SIGSTOP** -- *stop*
-  Sent when you hit CTRL+Z
-  Pauses the program, discussed above
-- [[SIGPIPE]] -- *pipe closed*
+<div created="20200623021308349" modified="20200623021641015" tags="concept" title="SIGPIPE" type="text/x-markdown">
+<pre>- SIGPIPE -- *pipe closed*
   Tells the program that the the pipeline has closed. Usually terminates the program.
   For example `cat /etc/passwd | head -n1` will send SIGPIPE to the `cat` process after the first line is printed, causing `cat` to terminate before finishing the whole file.
-- Ctrl+\ sends `SIGQUIT`, where the default action is to dump core and terminate. This can be used if a program is doing something very wrong, you need to stop it immediately, and would like to be able to debug it later.
+</pre>
+</div>
+<div created="20200623021821512" modified="20200623021836945" tags="concept" title="SIGQUIT" type="text/x-markdown">
+<pre>- `Ctrl+\` sends `SIGQUIT`, where the default action is to dump core and terminate. This can be used if a program is doing something very wrong, you need to stop it immediately, and would like to be able to debug it later.
 
 </pre>
 </div>
-<div created="20200616145626359" modified="20200616145626359" title="SIGPIPE">
-<pre></pre>
+<div created="20200623020920790" modified="20200623022816441" tags="concept" title="SIGSTOP">
+<pre>SIGSTOP
+
+Sent when you hit `CTRL+Z`
+Pauses the program, discussed above</pre>
 </div>
 <div created="20200616171330922" modified="20200616171330922" title="stroll">
 <pre></pre>
@@ -19263,6 +19284,29 @@ In [computing](https://www.wikiwand.com/en/Computing), a [computer program](http
 
 - in [imperative programming](https://www.wikiwand.com/en/Imperative_programming), a [subroutine](https://www.wikiwand.com/en/Subroutine) with [side effects](https://www.wikiwand.com/en/Side_effect_(computer_science)) is idempotent if the system state remains the same after one or several calls, in other words if the function from the system state space to itself associated to the subroutine is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition);
 - in [functional programming](https://www.wikiwand.com/en/Functional_programming), a [pure function](https://www.wikiwand.com/en/Pure_function) is idempotent if it is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition).</pre>
+</div>
+<div created="20200623022055541" modified="20200623022344331" tags="poem" title="听雨" type="text/x-markdown">
+<pre>```
+《菩萨蛮·人人尽说江南好》
+韦庄 
+人人尽说江南好，游人只合江南老。春水碧于天，画船听雨眠。
+
+垆边人似月，皓腕凝霜雪。未老莫还乡，还乡须断肠。
+```
+
+```
+虞美人·听雨
+[宋] 蒋捷
+少年听雨歌楼上，
+红烛昏罗帐。
+壮年听雨客舟中，
+江阔云低，断雁叫西风。
+
+而今听雨僧庐下，
+鬓已星星也。
+悲欢离合总无情，
+一任阶前，点滴到天明。
+```</pre>
 </div>
 <div created="20200621042729416" modified="20200621042729416" title="抽象">
 <pre></pre>
