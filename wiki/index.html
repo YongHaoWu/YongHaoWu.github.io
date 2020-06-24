@@ -233,6 +233,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all</li>
 
+<li>$:/config/Plugins/Disabled/$:/plugins/danielo515/autotag</li>
+
 <li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/filesystem</li>
 
 <li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/savetrail</li>
@@ -298,8 +300,6 @@ Error message and password prompt
 <li>$:/languages/zh-Hans</li>
 
 <li>$:/palette</li>
-
-<li>$:/plugins/danielo515/autotag</li>
 
 <li>$:/plugins/danielo515/context/css</li>
 
@@ -427,6 +427,8 @@ Error message and password prompt
 
 <li>$:/state/plugin-info--270617185-$:/themes/tiddlywiki/seamless</li>
 
+<li>$:/state/plugin-info--896887961-$:/plugins/danielo515/autotag</li>
+
 <li>$:/state/plugin-info--896887961-$:/plugins/sq/Stories</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/sq/Stories---1130285312</li>
@@ -485,19 +487,27 @@ Error message and password prompt
 
 <li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
 
+<li>$:/state/toc/Network-VirtualizationNetwork-158653383</li>
+
 <li>$:/state/toc/TableOfContents-Development--118161433</li>
 
 <li>$:/state/toc/TableOfContents-Development--398414299</li>
 
 <li>$:/state/toc/TableOfContents-Quote--118161433</li>
 
+<li>$:/state/toc/TableOfContents/Development-Network--118161433</li>
+
 <li>$:/state/toc/TableOfContents/Development-OS--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Development-WorkExperience--118161433</li>
 
+<li>$:/state/toc/TableOfContents/Development/Network-VirtualizationNetwork--118161433</li>
+
 <li>$:/state/toc/TableOfContents/Development/OS-Linux--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Development/OS/Linux-Signal--118161433</li>
+
+<li>$:/state/toc/TableOfContents/Quote-Poem--118161433</li>
 
 <li>$:/state/tree/$:/.giffmex/</li>
 
@@ -785,8 +795,6 @@ Error message and password prompt
 
 <li>core返回ip能连但running为false</li>
 
-<li>CreateEndpoint</li>
-
 <li>Dave Gifford</li>
 
 <li>Debug</li>
@@ -853,7 +861,7 @@ Error message and password prompt
 
 <li>musl</li>
 
-<li>NetworkDriver</li>
+<li>Network</li>
 
 <li>networks</li>
 
@@ -870,6 +878,8 @@ Error message and password prompt
 <li>PCB</li>
 
 <li>Pitfalls</li>
+
+<li>Poem</li>
 
 <li>PublishSite</li>
 
@@ -924,6 +934,8 @@ Error message and password prompt
 <li>Updating Stroll</li>
 
 <li>Using tiddlers</li>
+
+<li>VirtualizationNetwork</li>
 
 <li>Welcome to Stroll</li>
 
@@ -1540,6 +1552,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 </div>
 <div created="20200616155434955" modified="20200616155444398" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all">
 <pre>hide</pre>
+</div>
+<div created="20200624173320901" modified="20200624173320901" title="$:/config/Plugins/Disabled/$:/plugins/danielo515/autotag">
+<pre>yes</pre>
 </div>
 <div created="20200616155301110" modified="20200616155301110" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/filesystem">
 <pre>yes</pre>
@@ -11183,9 +11198,7 @@ NB: if you want no link, but at tooltip, use `&quot;&quot;` for a empty link.
 </div>
 <div status="complete" title="$:/Import">
 <pre>下列条目已被导入：
-
-# [[Untitled 1]]
-# [[$:/plugins/danielo515/autotag]]</pre>
+</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -14924,22 +14937,6 @@ NB: if you want no link, but at tooltip, use `&quot;&quot;` for a empty link.
 <div created="20200228210954683" modified="20200616180926662" tags="$:/giffmex/stroll" title="$:/palette">
 <pre>$:/palettes/Rocker</pre>
 </div>
-<div author="Danielo Rodriguez" bag="default" core-version="&gt;=5.1.0" dependents="" description="double click to edit tiddlers" list="readme" plugin-type="plugin" revision="0" source="https://github.com/danielo515/TW5-AutoTag" title="$:/plugins/danielo515/autotag" type="application/json" version="0.1.9">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/danielo515/autotag/startup/tagger.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/danielo515/autotag/startup/tagger.js\ntype: application/javascript\nmodule-type: startup\n\n\\*/\n\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;autotagger\&quot;;\nexports.after = [\&quot;startup\&quot;];\nexports.platforms = [\&quot;browser\&quot;];\nexports.synchronous = true;\n\nexports.startup = function(callback) {\n\nvar getTags=$tw.wiki.compileFilter(\&quot;[tags[]!is[system]sort[title]]\&quot;),\n    cache={};\n\nfunction autotag(changes){\n    var allTags=getTags(),\n        tagsRegex=new RegExp(allTags.join(\&quot;|\&quot;)),\n        taggedTiddlers=[];\n    $tw.utils.each(changes,function(tidInfo,title){\n     //if the title is on the cache it means we are tagging the same tiddler twice in a row, so skip it\n     // and remove it from the cache for future calls\n        if(cache[title]){\n            delete cache[title];\n            return;\r\n        }\n        if( !/^Draft of|^\\$:\\//.test(title) &amp;&amp; changes[title].modified){\n            /*If the title is not a system one or draft we operate on it*/\n            var tiddler=$tw.wiki.getTiddler(title).fields;\n                if(tagsRegex.test(tiddler.text))\n                {\n                    /*If any of the tags is contained on the tiddler text, then create a new array to host the new set of tags*/\n                    var newTags=[];\n                        for(var i=0,x=allTags.length;i&lt;x;i++){\n                            if( tiddler.text.indexOf(allTags[i]) !==-1 &amp;&amp; ( tiddler.tags === undefined || tiddler.tags.indexOf(allTags[i]) ==-1 )){\n                                newTags.push(allTags[i]);\r\n                            }\r\n                        }\n                    console.log(newTags);\n                    cache[title]=true; // save the processed tiddler on the cache to avoid edit loops\n                    taggedTiddlers.push(new $tw.Tiddler(tiddler,{tags: tiddler.tags ? newTags.concat(tiddler.tags) : newTags })); //only concatenate if the source tiddler has tagsS\n                }\n        }\n        \r\n    });\n    $tw.wiki.addTiddlers(taggedTiddlers);\r\n};\n    $tw.wiki.addEventListener(\&quot;change\&quot;,autotag);\n\n};\n\n})();&quot;,
-            &quot;title&quot;: &quot;$:/plugins/danielo515/autotag/startup/tagger.js&quot;,
-            &quot;type&quot;: &quot;application/javascript&quot;,
-            &quot;module-type&quot;: &quot;startup&quot;
-        },
-        &quot;$:/plugins/danielo515/autotag/readme&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/danielo515/autotag/readme&quot;,
-            &quot;text&quot;: &quot;This plugin tags tiddler automatically based on their content. It only adds tags that exists already on the wiki.\nThe only way it can be deactivated is disabling or uninstalling it.\n\nGithub: [[]]https://github.com/danielo515/TW5-AutoTag]]\n&quot;
-        }
-    }
-}</pre>
-</div>
 <div bag="default" created="20200126141319129" modified="20200521150810414" revision="0" tags="$:/tags/Stylesheet $:/giffmex/stroll $:/giffmex/blinks" title="$:/plugins/danielo515/context/css" type="text/css">
 <pre>.matched {background-color:#ffc;}
 .tw-context {
@@ -17232,6 +17229,9 @@ exports.context = contextWidget;
 <div created="20200616183700688" modified="20200616183700688" title="$:/state/plugin-info--270617185-$:/themes/tiddlywiki/seamless">
 <pre>yes</pre>
 </div>
+<div created="20200624173414328" modified="20200624173414328" title="$:/state/plugin-info--896887961-$:/plugins/danielo515/autotag">
+<pre>yes</pre>
+</div>
 <div created="20200425181557629" modified="20200425181557629" title="$:/state/plugin-info--896887961-$:/plugins/sq/Stories">
 <pre>yes</pre>
 </div>
@@ -17304,8 +17304,8 @@ exports.context = contextWidget;
 <div created="20200624162006372" modified="20200624162008156" title="$:/state/tab-1528275152">
 <pre>$:/core/ui/DefaultSearchResultList</pre>
 </div>
-<div created="20200418121928767" modified="20200624162300597" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20200418121928767" modified="20200624173301352" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20200616144657561" modified="20200619185215770" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -17313,19 +17313,25 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200623160310798" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
-<div created="20200418121835270" modified="20200624162917692" title="$:/state/tab/sidebar--595412856">
+<div created="20200418121835270" modified="20200624165332371" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
 </div>
 <div created="20200504200956301" modified="20200504201043124" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
 </div>
-<div created="20200623171543251" modified="20200624162920626" title="$:/state/toc/TableOfContents-Development--118161433">
-<pre>close</pre>
+<div created="20200624165807460" modified="20200624165807460" title="$:/state/toc/Network-VirtualizationNetwork-158653383">
+<pre>open</pre>
+</div>
+<div created="20200623171543251" modified="20200624164148258" title="$:/state/toc/TableOfContents-Development--118161433">
+<pre>open</pre>
 </div>
 <div created="20200624163007047" modified="20200624163008038" title="$:/state/toc/TableOfContents-Development--398414299">
 <pre>close</pre>
 </div>
 <div created="20200624163244790" modified="20200624163244790" title="$:/state/toc/TableOfContents-Quote--118161433">
+<pre>open</pre>
+</div>
+<div created="20200624165727016" modified="20200624165727016" title="$:/state/toc/TableOfContents/Development-Network--118161433">
 <pre>open</pre>
 </div>
 <div created="20200624161956789" modified="20200624161956789" title="$:/state/toc/TableOfContents/Development-OS--118161433">
@@ -17334,11 +17340,17 @@ exports.context = contextWidget;
 <div created="20200624102744943" modified="20200624160738124" title="$:/state/toc/TableOfContents/Development-WorkExperience--118161433">
 <pre>open</pre>
 </div>
+<div created="20200624165728772" modified="20200624165728772" title="$:/state/toc/TableOfContents/Development/Network-VirtualizationNetwork--118161433">
+<pre>open</pre>
+</div>
 <div created="20200624162111260" modified="20200624162111260" title="$:/state/toc/TableOfContents/Development/OS-Linux--118161433">
 <pre>open</pre>
 </div>
 <div created="20200624162617345" modified="20200624162910764" title="$:/state/toc/TableOfContents/Development/OS/Linux-Signal--118161433">
 <pre>close</pre>
+</div>
+<div created="20200624164427120" modified="20200624164427120" title="$:/state/toc/TableOfContents/Quote-Poem--118161433">
+<pre>open</pre>
 </div>
 <div created="20200504154623789" modified="20200504154625935" title="$:/state/tree/$:/.giffmex/">
 <pre>hide</pre>
@@ -17364,7 +17376,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200624162428038" list="$:/Import Quote Development [[golang monad]] MetaObject [[Books From Zhihu]] monad 美团ddd calico Debug SIGQUIT SIGPIPE SIGHUP SIGSTOP WorkExperience SIGINT Signal core返回ip能连但running为false TableOfContents" modified="20200624163023097" title="$:/StoryList">
+<div created="20200624164149174" list="$:/ControlPanel Network VirtualizationNetwork [[calicao subnet not match the CIDR of a configured Calico IP Pool]] Debug CIDR [[Signal experience]] linux golang SIGQUIT Note [[graceful restart]] 美团ddd OS Poem Quote 听雨 core返回ip能连但running为false [[host 模型]]" modified="20200624173403112" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521135635795" tags="$:/giffmex/bigeditarea" title="$:/tags/EditToolbar">
@@ -17395,7 +17407,7 @@ exports.context = contextWidget;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/yonghao.hu/Downloads/wiki/index.html&quot;
+            &quot;text&quot;: &quot;file:///Users/yonghao.hu/Downloads/wiki/tiddlywiki.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -17415,7 +17427,7 @@ exports.context = contextWidget;
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/yonghao.hu/Downloads/wiki/index.html&quot;
+            &quot;text&quot;: &quot;/Users/yonghao.hu/Downloads/wiki/tiddlywiki.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -17440,7 +17452,7 @@ exports.context = contextWidget;
     }
 }</pre>
 </div>
-<div created="20200418122623650" modified="20200624162656055" title="$:/temp/NewTagName">
+<div created="20200418122623650" modified="20200624165722179" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200616152848736" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200616152848736" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -18399,14 +18411,14 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200624162358327" title="$:/temp/search">
-<pre>table</pre>
+<div created="20200418122544376" modified="20200624165711918" title="$:/temp/search">
+<pre>cali</pre>
 </div>
 <div created="20200616183644116" modified="20200616183644116" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200616161922967" modified="20200624163334315" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>Untitled 1</pre>
+<div created="20200616161922967" modified="20200624165808566" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>calicao subnet not match the CIDR of a configured Calico IP Pool</pre>
 </div>
 <div bag="default" created="20200414145220556" modified="20200616183714956" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/tiddlywiki/seamless</pre>
@@ -18622,8 +18634,12 @@ Go back to viewing mode, click the link you created to the `Dave Gifford` tiddle
 
 When you are done here, return to [[Welcome to Stroll]] to continue the tutorial.</pre>
 </div>
-<div created="20200623172059355" modified="20200623172106995" tags="Development" title="Backend" type="text/x-markdown">
-<pre></pre>
+<div created="20200623172059355" modified="20200624165425096" tags="Development" title="Backend" type="">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Backend' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200621042543890" modified="20200624162842534" tags="Books" title="Books From Zhihu" type="text/x-markdown">
 <pre>有教[[抽象]]能力的书么？
@@ -18638,7 +18654,7 @@ When you are done here, return to [[Welcome to Stroll]] to continue the tutorial
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</pre>
 </div>
-<div created="20200622084843930" modified="20200623155503721" tags="debug" title="calicao subnet not match the CIDR of a configured Calico IP Pool" type="text/x-markdown">
+<div created="20200622084843930" modified="20200624173357784" tags="network Network VirtualizationNetwork" title="calicao subnet not match the CIDR of a configured Calico IP Pool" type="text/x-markdown">
 <pre>[[Debug]]
 [[docker]]
 [[calico]]
@@ -18659,7 +18675,7 @@ True
 <div created="20200619181812974" modified="20200619181812974" title="ci">
 <pre></pre>
 </div>
-<div created="20200617040925395" modified="20200617041105040" tags="network" title="CIDR" type="text/x-markdown">
+<div created="20200617040925395" modified="20200624165818346" tags="ci network" title="CIDR" type="text/x-markdown">
 <pre>[[Note]]
 
 In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. Classes A, B, and C have their own IP address ranges, default subnet masks, a maximum number of hosts, and private address ranges. Classes D and E have their own IP address ranges but do not require the other attributes. First, let's look at classes A, B, and C:
@@ -18681,9 +18697,6 @@ In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. C
 <pre>[[host 模型]] 但是端口被占用了，创建容器以及assign ip成功，但实际上进程是fail的；
 </pre>
 </div>
-<div created="20200622093144899" modified="20200622093144899" title="CreateEndpoint">
-<pre></pre>
-</div>
 <div created="20200423144522416" modified="20200521145919666" tags="$:/giffmex/tutorials" title="Dave Gifford">
 <pre>Congratulations! You found the tiddler with my name. See the links below in the reference section (below the horizontal line)? Good. 
 
@@ -18696,7 +18709,7 @@ Now go back to [[Welcome to Stroll]] to continue the tutorial.</pre>
 <div created="20200622093144898" modified="20200622093144898" title="Debug">
 <pre></pre>
 </div>
-<div created="20200616145438998" modified="20200624163241443" tags="TableOfContents" title="Development" tmap.id="eeab5bd5-37ca-4bf3-bcf1-cebd572ce43b" type="text/vnd.tiddlywiki">
+<div created="20200616145438998" modified="20200624165509078" tags="Development TableOfContents" title="Development" tmap.id="eeab5bd5-37ca-4bf3-bcf1-cebd572ce43b" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'Development' sort[ind]&gt;&gt;
@@ -18982,8 +18995,12 @@ When you are done playing with my dog, return to [[Welcome to Stroll]] to contin
 <div created="20200617082955041" modified="20200617082955041" title="musl">
 <pre></pre>
 </div>
-<div created="20200622093144899" modified="20200622093144899" title="NetworkDriver">
-<pre></pre>
+<div created="20200624165353002" modified="20200624165441589" tags="Development" title="Network">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Network' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200617041105043" modified="20200617041105043" title="networks">
 <pre></pre>
@@ -19042,6 +19059,13 @@ Click the buttons in any tiddler to see the tiddlers they create. Save changes. 
 </div>
 <div created="20200622162527707" modified="20200622162527707" title="Pitfalls">
 <pre></pre>
+</div>
+<div created="20200624164331715" modified="20200624164406169" tags="Quote" title="Poem">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Poem' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200619184117891" modified="20200619184117891" title="PublishSite">
 <pre></pre>
@@ -19165,7 +19189,7 @@ Usually means &quot;stop what you're doing&quot; -- may or may not kill the prog
 4. 终端驱动程序将 Ctrl-C 解释成一个 [[SIGINT]] 信号，记在该进程的 [[PCB]] 中（也可以说发送了一个 [[SIGINT]]信号给该进程）。
 5. 当某个时刻要从内核返回到该进程的用户空间代码继续执行之前，首先处理  [[PCB]]  中记录的信号，发现有一个 [[SIGINT]]信号待处理，而这个信号的默认处理动作是终止进程，所以直接终止进程而不再返回它的用户空间代码执行。</pre>
 </div>
-<div created="20200616155602246" modified="20200623160004009" tags="signal linux golang" title="Signal experience" type="text/x-markdown">
+<div created="20200616155602246" modified="20200624165256859" tags="golang linux Signal" title="Signal experience" type="text/x-markdown">
 <pre>[[Note]] 
 [[graceful shutdown]]
 
@@ -19483,6 +19507,13 @@ Click the &lt;&lt;icon {{$:/core/images/edit-button}} &quot;&quot;&gt;&gt; icon 
 
 &lt;/span&gt;</pre>
 </div>
+<div created="20200624165520189" modified="20200624165705912" tags="Network" title="VirtualizationNetwork">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'VirtualizationNetwork' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
+</div>
 <div bag="default" created="20200128030902225" list="$:/_sq/Stories-overview" modified="20200521174009380" revision="0" tags="$:/giffmex/tutorials" title="Welcome to Stroll" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;tabs &quot;[[A stroll through Stroll]] [[The TiddlyWiki layout]] [[Using tiddlers]] [[Linking in Stroll, part 1]] [[Linking in Stroll, part 2]] [[Linking in Stroll, part 3]] [[New tiddler linked here]] [[Two columns]] [[Advanced stuff]] [[Troubleshooting]] [[Stroll vs Roam]] [[Recent updates to Stroll]] [[Download Stroll]] [[Updating Stroll]] [[Add Stroll to your TW]] [[Get goodies]] [[Help / Acknowledgments]] [[Help us]]&quot; &quot;[[A stroll through Stroll]]&quot; &quot;$:/state/strollhometabs&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
 </div>
@@ -19510,7 +19541,7 @@ In [computing](https://www.wikiwand.com/en/Computing), a [computer program](http
 - in [imperative programming](https://www.wikiwand.com/en/Imperative_programming), a [subroutine](https://www.wikiwand.com/en/Subroutine) with [side effects](https://www.wikiwand.com/en/Side_effect_(computer_science)) is idempotent if the system state remains the same after one or several calls, in other words if the function from the system state space to itself associated to the subroutine is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition);
 - in [functional programming](https://www.wikiwand.com/en/Functional_programming), a [pure function](https://www.wikiwand.com/en/Pure_function) is idempotent if it is idempotent in the mathematical sense given in the [definition](https://www.wikiwand.com/en/Idempotence#Definition).</pre>
 </div>
-<div created="20200623022055541" modified="20200623022344331" tags="poem" title="听雨" type="text/x-markdown">
+<div created="20200623022055541" modified="20200624164422456" tags="Poem" title="听雨" type="text/x-markdown">
 <pre>```
 《菩萨蛮·人人尽说江南好》
 韦庄 
