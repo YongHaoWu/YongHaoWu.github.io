@@ -215,6 +215,12 @@ Error message and password prompt
 
 <li>$:/config/Navigation/openLinkFromInsideRiver</li>
 
+<li>$:/config/Navigation/UpdateAddressBar</li>
+
+<li>$:/config/Navigation/UpdateHistory</li>
+
+<li>$:/config/NewJournal/Text</li>
+
 <li>$:/config/NewJournal/Title</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/_sq/Stories/Templates/StoryTogglePageControl</li>
@@ -521,9 +527,13 @@ Error message and password prompt
 
 <li>$:/state/toc/Development-OS-779307917</li>
 
+<li>$:/state/toc/Linux-Signal-1152169851</li>
+
 <li>$:/state/toc/TableOfContents-Development--118161433</li>
 
 <li>$:/state/toc/TableOfContents-Development--398414299</li>
+
+<li>$:/state/toc/TableOfContents-Liberal arts--118161433</li>
 
 <li>$:/state/toc/TableOfContents-Quote--118161433</li>
 
@@ -546,6 +556,10 @@ Error message and password prompt
 <li>$:/state/toc/TableOfContents/Development/Formal language-Regular expression--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Development/Formal language/Programming language-Golang--118161433</li>
+
+<li>$:/state/toc/TableOfContents/Development/Formal language/Programming language-Programming language theory--118161433</li>
+
+<li>$:/state/toc/TableOfContents/Development/Formal language/Programming language/Programming language theory-Type Theory--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Development/Network-Virtualization--118161433</li>
 
@@ -877,6 +891,8 @@ Error message and password prompt
 
 <li>graceful shutdown</li>
 
+<li>History</li>
+
 <li>host 模型</li>
 
 <li>http server</li>
@@ -884,6 +900,8 @@ Error message and password prompt
 <li>Idempotence</li>
 
 <li>Joe Armstrong</li>
+
+<li>Liberal arts</li>
 
 <li>linux</li>
 
@@ -915,7 +933,11 @@ Error message and password prompt
 
 <li>Positive lookbehind</li>
 
+<li>product type</li>
+
 <li>Programming language</li>
+
+<li>Programming language theory</li>
 
 <li>Quote</li>
 
@@ -949,11 +971,15 @@ Error message and password prompt
 
 <li>StrollTips</li>
 
+<li>sum type</li>
+
 <li>TableOfContents</li>
 
 <li>TiddlyWiki</li>
 
 <li>Troubleshooting</li>
+
+<li>Type Theory</li>
 
 <li>Virtualization</li>
 
@@ -964,6 +990,8 @@ Error message and password prompt
 <li>可重入vs幂等性</li>
 
 <li>听雨</li>
+
+<li>广告词过滤</li>
 
 <li>抽象</li>
 
@@ -1589,6 +1617,15 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200418141615149" modified="20200521145817395" tags="$:/giffmex/stroll" title="$:/config/Navigation/openLinkFromInsideRiver">
 <pre>top</pre>
 </div>
+<div created="20200626110204335" modified="20200626110204335" title="$:/config/Navigation/UpdateAddressBar">
+<pre>permalink</pre>
+</div>
+<div created="20200626110211095" modified="20200626110211095" title="$:/config/Navigation/UpdateHistory">
+<pre>yes</pre>
+</div>
+<div created="20200626105604831" modified="20200626110636151" title="$:/config/NewJournal/Text">
+<pre></pre>
+</div>
 <div bag="default" created="20191225174624729" modified="20200521145811587" revision="0" tags="$:/giffmex/stroll" title="$:/config/NewJournal/Title" type="text/vnd.tiddlywiki">
 <pre>YYYY / 0MM / 0DD / 0hh:0mm:0ss /</pre>
 </div>
@@ -1634,8 +1671,8 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200626105324276" modified="20200626105324276" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/share">
 <pre>yes</pre>
 </div>
-<div bag="default" created="20200106214031452" modified="20200521150810088" revision="0" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
-<pre>yes</pre>
+<div bag="default" created="20200106214031452" modified="20200626125021978" revision="0" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
+<pre>no</pre>
 </div>
 <div created="20200521173043182" modified="20200619185428907" title="$:/config/TextEditor/EditorHeight/Mode">
 <pre>auto</pre>
@@ -11211,7 +11248,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" created="20200106211749103" modified="20200624162413685" revision="0" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200106211749103" modified="20200626105601561" revision="0" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki">
 <pre>TableOfContents</pre>
 </div>
 <div created="20200603121652031" modified="20200603121652031" title="$:/giffmex/stroll">
@@ -11285,7 +11322,7 @@ NB: if you want no link, but at tooltip, use `&quot;&quot;` for a empty link.
     &quot;tiddlers&quot;: {
         &quot;Untitled&quot;: {
             &quot;title&quot;: &quot;Untitled&quot;,
-            &quot;text&quot;: &quot;&lt;meta charset='utf-8'&gt;&lt;span style=\&quot;color: rgb(187, 0, 170); font-family: SFMono-Regular, Consolas, &amp;quot;Liberation Mono&amp;quot;, Menlo, Courier, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(238, 238, 238); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;\&quot;&gt;Positive lookbehind&lt;/span&gt;&quot;,
+            &quot;text&quot;: &quot;&lt;meta charset='utf-8'&gt;&lt;span style=\&quot;color: rgb(204, 0, 0); font-family: -apple-system, system-ui, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 32.9px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;\&quot;&gt;Type Theory&lt;/span&gt;&quot;,
             &quot;type&quot;: &quot;text/html&quot;
         }
     }
@@ -17467,8 +17504,8 @@ exports.context = contextWidget;
 <div created="20200418132348763" modified="20200625045639075" title="$:/state/tab--1963855381">
 <pre>$:/plugins/sq/Stories/settings</pre>
 </div>
-<div created="20200616145129728" modified="20200625045219771" title="$:/state/tab--2112689675">
-<pre>$:/core/ui/ControlPanel/Advanced</pre>
+<div created="20200616145129728" modified="20200626105543517" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
 <div created="20200429214724797" modified="20200624155521434" title="$:/state/tab--219645345">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -17476,8 +17513,8 @@ exports.context = contextWidget;
 <div created="20200423200357785" modified="20200423200357785" title="$:/state/tab--509593366">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
-<div created="20200619183736594" modified="20200619183736594" title="$:/state/tab--697582678">
-<pre>$:/core/ui/ControlPanel/Settings/CodeMirror</pre>
+<div created="20200619183736594" modified="20200626110442683" title="$:/state/tab--697582678">
+<pre>$:/core/ui/ControlPanel/Settings/TiddlyWiki</pre>
 </div>
 <div created="20200429214732957" modified="20200624162232241" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
@@ -17494,11 +17531,11 @@ exports.context = contextWidget;
 <div created="20200616155538724" modified="20200625051821012" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
 </div>
-<div created="20200624162006372" modified="20200626102458401" title="$:/state/tab-1528275152">
+<div created="20200624162006372" modified="20200626125020480" title="$:/state/tab-1528275152">
 <pre>$:/core/ui/DefaultSearchResultList</pre>
 </div>
-<div created="20200418121928767" modified="20200626105014536" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20200418121928767" modified="20200626110501153" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200616144657561" modified="20200619185215770" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -17506,7 +17543,7 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200626102410668" title="$:/state/tab/sidebar--595412856">
+<div created="20200418121835270" modified="20200626125352282" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
 </div>
 <div created="20200504200956301" modified="20200625045453184" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -17527,17 +17564,23 @@ exports.context = contextWidget;
 <div created="20200626102351509" modified="20200626102351889" title="$:/state/toc/Development-OS-779307917">
 <pre>close</pre>
 </div>
-<div created="20200623171543251" modified="20200625044707680" title="$:/state/toc/TableOfContents-Development--118161433">
+<div created="20200626110558550" modified="20200626110559491" title="$:/state/toc/Linux-Signal-1152169851">
+<pre>close</pre>
+</div>
+<div created="20200623171543251" modified="20200626143155465" title="$:/state/toc/TableOfContents-Development--118161433">
 <pre>open</pre>
 </div>
 <div created="20200624163007047" modified="20200624163008038" title="$:/state/toc/TableOfContents-Development--398414299">
 <pre>close</pre>
 </div>
-<div created="20200624163244790" modified="20200624163244790" title="$:/state/toc/TableOfContents-Quote--118161433">
+<div created="20200626125201162" modified="20200626125201162" title="$:/state/toc/TableOfContents-Liberal arts--118161433">
 <pre>open</pre>
 </div>
-<div created="20200625044710343" modified="20200625044712033" title="$:/state/toc/TableOfContents/Development-Algorithm--118161433">
+<div created="20200624163244790" modified="20200626124935620" title="$:/state/toc/TableOfContents-Quote--118161433">
 <pre>close</pre>
+</div>
+<div created="20200625044710343" modified="20200626105525142" title="$:/state/toc/TableOfContents/Development-Algorithm--118161433">
+<pre>open</pre>
 </div>
 <div created="20200626033025418" modified="20200626033031974" title="$:/state/toc/TableOfContents/Development-Computing--118161433">
 <pre>close</pre>
@@ -17548,8 +17591,8 @@ exports.context = contextWidget;
 <div created="20200625051716578" modified="20200626102505455" title="$:/state/toc/TableOfContents/Development-Network--118161433">
 <pre>close</pre>
 </div>
-<div created="20200624161956789" modified="20200626033056982" title="$:/state/toc/TableOfContents/Development-OS--118161433">
-<pre>open</pre>
+<div created="20200624161956789" modified="20200626144900840" title="$:/state/toc/TableOfContents/Development-OS--118161433">
+<pre>close</pre>
 </div>
 <div created="20200624102744943" modified="20200626033036831" title="$:/state/toc/TableOfContents/Development-WorkExperience--118161433">
 <pre>close</pre>
@@ -17560,10 +17603,16 @@ exports.context = contextWidget;
 <div created="20200626103456082" modified="20200626103456082" title="$:/state/toc/TableOfContents/Development/Formal language-Programming language--118161433">
 <pre>open</pre>
 </div>
-<div created="20200626103950075" modified="20200626103950075" title="$:/state/toc/TableOfContents/Development/Formal language-Regular expression--118161433">
-<pre>open</pre>
+<div created="20200626103950075" modified="20200626144904427" title="$:/state/toc/TableOfContents/Development/Formal language-Regular expression--118161433">
+<pre>close</pre>
 </div>
 <div created="20200626103456783" modified="20200626103456783" title="$:/state/toc/TableOfContents/Development/Formal language/Programming language-Golang--118161433">
+<pre>open</pre>
+</div>
+<div created="20200626144906867" modified="20200626144906867" title="$:/state/toc/TableOfContents/Development/Formal language/Programming language-Programming language theory--118161433">
+<pre>open</pre>
+</div>
+<div created="20200626144911830" modified="20200626144911830" title="$:/state/toc/TableOfContents/Development/Formal language/Programming language/Programming language theory-Type Theory--118161433">
 <pre>open</pre>
 </div>
 <div created="20200625051717805" modified="20200625051849987" title="$:/state/toc/TableOfContents/Development/Network-Virtualization--118161433">
@@ -17620,7 +17669,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="TableOfContents" title="$:/StoryList">
+<div created="20200626105514614" list="[[Programming language theory]] [[Programming language]] [[product type]] [[sum type]] [[Type Theory]]" modified="20200626144905779" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/core/ui/Buttons/delete $:/.giffmex/Buttons/more-tiddler-edit-actions $:/_sq/Stories/divertTiddlerEditMacro $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200625045444250" tags="$:/giffmex/bigeditarea" title="$:/tags/EditToolbar">
@@ -17696,7 +17745,7 @@ exports.context = contextWidget;
     }
 }</pre>
 </div>
-<div created="20200418122623650" modified="20200626103830039" title="$:/temp/NewTagName">
+<div created="20200418122623650" modified="20200626143718064" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200616152848736" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200616152848736" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -18655,14 +18704,14 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200626105453739" title="$:/temp/search">
+<div created="20200418122544376" modified="20200626143153522" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200616161922967" modified="20200626105234616" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>SIGPIPE</pre>
+<div created="20200616161922967" modified="20200626125403954" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>Regular expression</pre>
 </div>
 <div bag="default" created="20200414145220556" modified="20200616183714956" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/tiddlywiki/seamless</pre>
@@ -18803,8 +18852,12 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200619180319289" modified="20200619180319289" title="alpine">
 <pre></pre>
 </div>
-<div created="20200623172059355" modified="20200623172106995" tags="Development" title="Backend" type="text/x-markdown">
-<pre></pre>
+<div created="20200623172059355" modified="20200626110534227" tags="Development" title="Backend" type="text/vnd.tiddlywiki">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Backend' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200626101719670" modified="20200626104134625" tags="Linux" title="Bash" type="text/x-markdown">
 <pre>[[Linux]]
@@ -19026,6 +19079,9 @@ switch a, b:
 <div created="20200616161806949" modified="20200626100613320" tags="Linux" title="graceful shutdown">
 <pre></pre>
 </div>
+<div created="20200626125139806" modified="20200626125344332" tags="[[Liberal arts]]" title="History">
+<pre>[[Liberal arts]]</pre>
+</div>
 <div created="20200624102738735" modified="20200624102738735" title="host 模型">
 <pre></pre>
 </div>
@@ -19038,11 +19094,22 @@ switch a, b:
 <div created="20200620041557875" modified="20200620041557875" title="Joe Armstrong">
 <pre></pre>
 </div>
+<div created="20200626125028177" modified="20200626125112424" tags="TableOfContents" title="Liberal arts" type="text/vnd.tiddlywiki">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Liberal arts' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
+</div>
 <div created="20200616145626359" modified="20200616145626359" title="linux">
 <pre></pre>
 </div>
-<div created="20200624161749867" modified="20200624161922436" tags="OS" title="Linux" type="text/x-markdown">
-<pre></pre>
+<div created="20200624161749867" modified="20200626110556116" tags="OS" title="Linux" type="text/vnd.tiddlywiki">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Linux' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200617041259877" modified="20200625044539922" tags="ci Algorithm" title="Merkle tree" type="text/x-markdown">
 <pre>[[Note]]
@@ -19119,10 +19186,19 @@ switch a, b:
 
 https://www.regular-expressions.info/refadv.html</pre>
 </div>
+<div created="20200626143636901" modified="20200626144852002" tags="[[Type Theory]]" title="product type" type="text/x-markdown">
+<pre>&gt; A product type (from &quot;Cartesian product&quot;, i.e tuples) T = A * B means that a value of type T has a component that is of type A and another component that is of type B. It is used to aggregate parts into a whole.</pre>
+</div>
 <div created="20200626103404097" modified="20200626103443787" tags="[[Formal language]]" title="Programming language">
 <pre>A programming language is a [[Formal language]] comprising a set of instructions that produce various kinds of output.
 
  Programming languages are used in computer programming to implement algorithms.</pre>
+</div>
+<div created="20200626143205460" modified="20200626143313694" tags="[[Programming language]]" title="Programming language theory" type="text/x-markdown">
+<pre>[[Programming language]]
+
+
+</pre>
 </div>
 <div color="#f2f511" created="20200624163052265" modified="20200625045046908" tags="Quote TableOfContents" title="Quote" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
@@ -19255,6 +19331,25 @@ Pauses the program, discussed above</pre>
 * http://blog.tomzheng.com/wp-content/uploads/2020/01/tomz-jiagou-2019-12-8.html
 * http://note.dimpurr.com/#Home</pre>
 </div>
+<div created="20200626143636900" modified="20200626150912963" tags="[[Type Theory]]" title="sum type" type="text/x-markdown">
+<pre>[[Type Theory]]
+
+
+* A [[sum type]] `T = A | B` means that a value of type `T` can be either of type `A` or of type `B`. Such a type is used to express polymorphism.
+
+
+&gt;  A list type is a sum type with two variants, Nil for an empty list and Cons x xs for the combination of a new element x with a list xs to create a new list.
+```
+data List a = Nil | Cons a (List a)
+```
+
+
+The combination of `enum`and `union`-like behavior is why this sort of type is often referred to as a “[tagged union](https://en.wikipedia.org/wiki/Tagged_union)”. 
+
+In [type theory](https://en.wikipedia.org/wiki/Type_theory), it’s referred to as a sum type, and is one of many algebraic types including [product types](https://en.wikipedia.org/wiki/Product_type) and [quotient types](https://en.wikipedia.org/wiki/Quotient_type). Though the variants are disjoint, they collectively form a single type.
+
+</pre>
+</div>
 <div caption="{{$:/language/SideBar/Contents/Caption}}" created="20200623164931845" list-before="$:/core/ui/SideBar/Open" modified="20200623171817140" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
@@ -19323,6 +19418,46 @@ Now your 'Map' tab will have a dropdown at the top to change the columns/sidebar
 
 &lt;/span&gt;</pre>
 </div>
+<div created="20200626143329206" modified="20200626144249121" tags="[[Programming language theory]]" title="Type Theory" type="text/x-markdown">
+<pre>[[Programming language theory]]
+
+&gt; a type theory is any of a class of formal systems, some of which can serve as alternatives to set theory as a foundation for all mathematics. In type theory, every &quot;term&quot; has a &quot;type&quot; and operations are restricted to terms of a certain type.
+
+
+ A [[product type]] (from &quot;Cartesian product&quot;, i.e tuples) `T = A * B` means that a value of type `T` has a component that is of type `A` and another component that is of type `B`. It is used to aggregate parts into a whole.
+
+
+
+---
+
+
+
+In [computer science](https://www.wikiwand.com/en/Computer_science), a **tagged union**, also called a **variant**, **variant record**, **choice type**, **discriminated union**, **disjoint union**, **sum type** or **coproduct**, is a [data structure](https://www.wikiwand.com/en/Data_structure) used to hold a value that could take on several different, but fixed, types. 
+
+
+
+#### sound type 
+
+A *sound* type system is one that ensures your program does not get into invalid states.
+
+
+
+ 
+
+##### Strong Typed
+
+a strongly typed language has stricter typing rules at compile time, which implies that errors and exceptions are more likely to happen during compilation
+
+##### Weaked Typed
+
+a weakly typed language has looser typing rules and may produce unpredictable results or may perform implicit type conversion at runtime
+
+
+
+&lt;http://www.yinwang.org/blog-cn/2012/08/01/interpreter&gt;
+
+</pre>
+</div>
 <div created="20200625051608737" modified="20200625051638857" tags="Network" title="Virtualization">
 <pre>[[Network]]</pre>
 </div>
@@ -19374,6 +19509,21 @@ In [computing](https://www.wikiwand.com/en/Computing), a [computer program](http
 鬓已星星也。
 悲欢离合总无情，
 一任阶前，点滴到天明。
+```</pre>
+</div>
+<div created="20200626125407665" modified="20200626125505255" tags="[[Regular expression]]" title="广告词过滤">
+<pre>[[Regular expression]]
+
+https://www.zhihu.com/question/321235026/answer/659682220
+
+```
+(
+	regexpTaobao    = regexp.MustCompile(`￥([\w\s]+)￥`)
+	regexpURL       = regexp.MustCompile(`(?:http|https|www)(?:[\s\.:\/\/]{1,})([\w%+:\s\/\.?=]{1,})`)
+	regexpWhitelist = regexp.MustCompile(`((acg|im9|bili|gov).*(com|html|cn|tv)|(av\d{8,}|AV\d{8,}))`)
+	regexpQQ        = regexp.MustCompile(`(?:[加qQ企鹅号码\s]{2,}|[群号]{1,})(?:[\x{4e00}-\x{9eff}]*)(?:[:，：]?)([\d\s]{6,})`)
+	regexpWechat    = regexp.MustCompile(`(?:[加+微＋+➕薇？vV威卫星♥❤姓xX信]{2,}|weixin|weix)(?:[，❤️.\s]?)(?:[\x{4e00}-\x{9eff}]?)(?:[:，：]?)([\w\s]{6,})`)
+)
 ```</pre>
 </div>
 <div created="20200621042729416" modified="20200621042729416" title="抽象">
