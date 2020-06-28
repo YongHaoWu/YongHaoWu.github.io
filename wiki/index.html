@@ -19435,10 +19435,15 @@ Usually means &quot;stop what you're doing&quot; -- may or may not kill the prog
 <div created="20200628075931592" modified="20200628075931592" title="SIGKILL">
 <pre></pre>
 </div>
-<div created="20200619184942925" modified="20200628121633227" tags="IPC" title="Signal" type="text/x-markdown">
+<div created="20200619184942925" modified="20200628152704821" tags="IPC" title="Signal" type="text/vnd.tiddlywiki">
 <pre>[[Note]]
 [[Concept]]
-## 信号的基本概念
+
+
+
+!! 信号的基本概念
+
+&lt;div class=&quot;box&quot;&gt;
 
 &gt; Signals are a limited form of inter-process communication ([[IPC]]), typically used in Unix, Unix-like, and other POSIX-compliant operating systems. 
 
@@ -19449,20 +19454,23 @@ When a signal is sent, the operating system interrupts the target process' norma
 There are two signals which cannot be intercepted and handled: [[SIGKILL]] and [[SIGSTOP]].
 
 Execution can be interrupted during any non-atomic instruction.
+&lt;/div&gt;
 
-## Risks
+!! Risks
 Signal handling is vulnerable to race conditions. As signals are asynchronous, another signal (even of the same type) can be delivered to the process during execution of the signal handling routine.
 
 Use of non-[[reentrant]] functions, e.g., malloc or printf, inside signal handlers is also unsafe. In particular, the POSIX specification and the Linux man page signal(7) requires that all system functions directly or indirectly called from a signal function are [[async-signal-safe ]]
 
----
+&lt;div class=&quot;box&quot;&gt;
 
-## 例子
-1. 用户输入命令，在 Shell 下启动一个前台进程。
-2. 用户按下 Ctrl-C，这个键盘输入产生一个硬件中断。
-3. 如果 CPU 当前正在执行这个进程的代码，则该进程的用户空间代码暂停执行，CPU 从[[用户态]]切换到[[内核态]]处理硬件[[中断]]。
-4. 终端驱动程序将 Ctrl-C 解释成一个 [[SIGINT]] 信号，记在该进程的 [[PCB]] 中（也可以说发送了一个 [[SIGINT]]信号给该进程）。
-5. 当某个时刻要从内核返回到该进程的用户空间代码继续执行之前，首先处理  [[PCB]]  中记录的信号，发现有一个 [[SIGINT]]信号待处理，而这个信号的默认处理动作是终止进程，所以直接终止进程而不再返回它的用户空间代码执行。</pre>
+!! 例子
+# 用户输入命令，在 Shell 下启动一个前台进程。
+# 用户按下 Ctrl-C，这个键盘输入产生一个硬件中断。
+# 如果 CPU 当前正在执行这个进程的代码，则该进程的用户空间代码暂停执行，CPU 从[[用户态]]切换到[[内核态]]处理硬件[[中断]]。
+# 终端驱动程序将 Ctrl-C 解释成一个 [[SIGINT]] 信号，记在该进程的 [[PCB]] 中（也可以说发送了一个 [[SIGINT]]信号给该进程）。
+# 当某个时刻要从内核返回到该进程的用户空间代码继续执行之前，首先处理  [[PCB]]  中记录的信号，发现有一个 [[SIGINT]]信号待处理，而这个信号的默认处理动作是终止进程，所以直接终止进程而不再返回它的用户空间代码执行。
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200616155602246" modified="20200628060138365" tags="Signal" title="Signal experience" type="text/x-markdown">
 <pre>[[Note]] 
