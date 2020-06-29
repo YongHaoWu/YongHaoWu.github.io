@@ -1019,6 +1019,8 @@ Error message and password prompt
 
 <li>Programming language theory</li>
 
+<li>ptrace</li>
+
 <li>Quote</li>
 
 <li>recvq</li>
@@ -17840,7 +17842,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="async-signal-safe StrollTips Signal SIGTRAP" modified="20200629060638445" title="$:/StoryList">
+<div created="20200628163506618" list="GDB async-signal-safe" modified="20200629064904929" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -18886,14 +18888,14 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200629054519889" title="$:/temp/search">
-<pre>tip</pre>
+<div created="20200418122544376" modified="20200629064135116" title="$:/temp/search">
+<pre>GDB</pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200616161922967" modified="20200628080425762" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>Signal</pre>
+<div created="20200616161922967" modified="20200629064908584" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>SIGTRAP</pre>
 </div>
 <div bag="default" created="20200414145220556" modified="20200616183714956" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/tiddlywiki/seamless</pre>
@@ -19230,10 +19232,23 @@ In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. C
 <div created="20200626103619996" modified="20200626103619996" title="formal language">
 <pre></pre>
 </div>
-<div created="20200628082813118" modified="20200628082854141" tags="LinuxTools" title="GDB" type="text/x-markdown">
+<div created="20200628082813118" modified="20200629064907517" tags="LinuxTools" title="GDB" type="">
 <pre>[[LinuxTools]]
 
 The GNU Debugger (GDB) is a portable debugger that runs on many Unix-like systems and works for many programming languages
+
+&lt;div class=&quot;box&quot;&gt;
+&quot;&quot;&quot;
+
+GDB controls the program that we are debugging (the inferior) through a system call named [[ptrace]]
+
+ptrace() can, for example, set the registers, peek and poke memory, continue or interrupt the inferior — all the good stuff we need for debugging.
+
+&quot;&quot;&quot;
+
+&lt;/div&gt;
+
+* The code may hit a breakpoint, which generates a [[SIGTRAP]]
 </pre>
 </div>
 <div created="20200617082304992" modified="20200626173132420" tags="linux Golang ci" title="goalng CI build 二进制/tmp/zero-redis: No such file or directory" type="text/x-markdown">
@@ -19504,6 +19519,9 @@ This is why structs are called “product types”.
 
 
 </pre>
+</div>
+<div created="20200629064907518" modified="20200629064907518" title="ptrace">
+<pre></pre>
 </div>
 <div color="#f2f511" created="20200624163052265" modified="20200625045046908" tags="Quote TableOfContents" title="Quote" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
