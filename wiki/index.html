@@ -1001,6 +1001,8 @@ Error message and password prompt
 
 <li>Interrupt</li>
 
+<li>ioctl</li>
+
 <li>IPC</li>
 
 <li>irqbalance</li>
@@ -1086,6 +1088,8 @@ Error message and password prompt
 <li>RenameTags</li>
 
 <li>Resources</li>
+
+<li>select</li>
 
 <li>sendq</li>
 
@@ -18365,7 +18369,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="read/write 阻塞(block)" modified="20200630093745784" title="$:/StoryList">
+<div created="20200628163506618" list="File&amp;IO ioctl read/write 阻塞(block)" modified="20200630144245377" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19934,6 +19938,17 @@ An interrupt is a response by the processor to an event that needs attention fro
 
 &lt;/div&gt;</pre>
 </div>
+<div created="20200630144247003" modified="20200630144317389" tags="File&amp;IO" title="ioctl">
+<pre>[[File&amp;IO]]
+
+&lt;div class=&quot;box&quot;&gt;
+&quot;&quot;&quot;
+
+ioctl用于向设备发控制和配置命令，有些命令也需要读写一些数据，但这些数据是不能用read/write读写的，称为Out-of-band数据。也就是说，read/write读写的数据是in-band数据，是I/O操作的主体，而ioctl命令传送的是控制信息，其中的数据是辅助的数据。例如，在串口线上收发数据通过read/write操作，而串口的波特率、校验位、停止位通过ioctl设置，A/D转换的结果通过read读取，而A/D转换的精度和工作频率通过ioctl设置。
+
+&quot;&quot;&quot;
+&lt;/div&gt;</pre>
+</div>
 <div created="20200628080725926" modified="20200628080749322" tags="Linux" title="IPC" type="text/x-markdown">
 <pre>[[Linux]]
 
@@ -20145,7 +20160,7 @@ This is why structs are called “product types”.
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20200630091442012" modified="20200630093943233" tags="File&amp;IO" title="read/write">
+<div created="20200630091442012" modified="20200630094713142" tags="File&amp;IO" title="read/write">
 <pre>[[File&amp;IO]]
 
 &lt;div class=&quot;box&quot;&gt;
@@ -20184,7 +20199,10 @@ int main(void)
 
 #a.out调用read时睡眠等待，直到终端设备输入了换行符才从read返回，read只读走10个字符，剩下的字符仍然保存在内核的终端设备输入缓冲区中。
 
-#a.out进程打印并退出，这时Shell进程恢复运行，Shell继续从终端读取用户输入的命令，于是读走了终端设备输入缓冲区中剩下的字符d和换行符，把它当成一条命令解释执行，结果发现执行不了，没有d这个命令。</pre>
+#a.out进程打印并退出，这时Shell进程恢复运行，Shell继续从终端读取用户输入的命令，于是读走了终端设备输入缓冲区中剩下的字符d和换行符，把它当成一条命令解释执行，结果发现执行不了，没有d这个命令。
+
+
+设备1有数据到达时可能不能及时处理，最长需延迟n秒才能处理，而且反复查询还是做了很多无用功。以后要学习的[[select]](2)函数可以阻塞地同时监视多个设备，还可以设定阻塞等待的超时时间，从而圆满地解决了这个问题。</pre>
 </div>
 <div created="20200628054351272" modified="20200628054351272" title="recvq">
 <pre></pre>
@@ -20254,6 +20272,9 @@ https://www.debuggex.com/cheatsheet/regex/pcre</pre>
 &lt;/$reveal&gt;</pre>
 </div>
 <div created="20200621042537590" modified="20200621042537590" title="Resources">
+<pre></pre>
+</div>
+<div created="20200630094713143" modified="20200630094713143" title="select">
 <pre></pre>
 </div>
 <div created="20200628054351271" modified="20200628054351271" title="sendq">
