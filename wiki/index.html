@@ -18182,7 +18182,7 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200628165857445" title="$:/state/tab/sidebar--595412856">
+<div created="20200418121835270" modified="20200630043441870" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
 </div>
 <div created="20200504200956301" modified="20200628155701482" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -18341,7 +18341,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="可重入vs幂等性 Reentrant" modified="20200629170336471" title="$:/StoryList">
+<div created="20200628163506618" list="async-signal-safe [[async-signal-safe ]]" modified="20200630043455559" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19387,8 +19387,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200629170335173" title="$:/temp/search">
-<pre>可重入</pre>
+<div created="20200418122544376" modified="20200630043453297" title="$:/temp/search">
+<pre>signal</pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -19546,7 +19546,7 @@ Two common classes of algebraic types are [[product type]]s (i.e., tuples and re
 <div created="20200619180319289" modified="20200619180319289" title="alpine">
 <pre></pre>
 </div>
-<div created="20200628121633232" modified="20200629124217948" tags="Signal" title="async-signal-safe">
+<div created="20200628121633232" modified="20200630051815723" tags="Signal" title="async-signal-safe">
 <pre>! signal-safety
 !! async-signal-safe functions
 
@@ -19578,6 +19578,9 @@ An async-signal-safe function is one that can be safely called from within a sig
        on inconsistent data, with unpredictable results.
 &quot;&quot;&quot;
 &lt;/div&gt;
+
+* [[stdout thread-safe in C on Linux?|https://stackoverflow.com/questions/467938/stdout-thread-safe-in-c-on-linux]]
+
 
 !!Solution
 &lt;div class=&quot;box&quot;&gt;
