@@ -1025,6 +1025,8 @@ Error message and password prompt
 
 <li>Merkle tree</li>
 
+<li>mmap</li>
+
 <li>monad</li>
 
 <li>musl</li>
@@ -18369,7 +18371,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="File&amp;IO ioctl read/write 阻塞(block)" modified="20200630144245377" title="$:/StoryList">
+<div created="20200628163506618" list="File&amp;IO mmap ioctl read/write 阻塞(block)" modified="20200630144245377" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19415,8 +19417,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200630084541344" title="$:/temp/search">
-<pre>Process</pre>
+<div created="20200418122544376" modified="20200630163534262" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -20030,6 +20032,76 @@ main是这条规则的目标（Target），main.o、stack.o和maze.o是这条规
 ![](https://learning.oreilly.com/library/view/hands-on-blockchain-for/9781788627856/assets/1dc3424f-2b27-496c-9b53-600829a14d09.png)
 
 &gt; If you use a naive approach, you need to download all the hashes of the data (Data 1 to Data 8) and the Root Hash. In this example, we only have eight pieces of data. Imagine if we had 100 and you had to download the entire dataset. Merkle trees makes this process more efficient because we don't need to download the full set of data.</pre>
+</div>
+<div created="20200630163547605" modified="20200630170210280" tags="File&amp;IO" title="mmap">
+<pre>[[File&amp;IO]]
+&lt;div class=&quot;box&quot;&gt;
+&quot;&quot;&quot;
+
+mmap可以把磁盘文件的一部分直接映射到内存，这样文件中的位置直接就有对应的内存地址，对文件的读写可以直接用指针来做而不需要read/write函数。
+
+ void *mmap(void *addr, size_t len, int prot, int flag, int filedes, off_t off);
+
+ int munmap(void *addr, size_t len);
+
+[img[http://akaedu.github.io/book/images/io.mmap.png]]
+
+&quot;&quot;&quot;
+&lt;/div&gt;
+
+* 如果addr参数为NULL，内核会自己在进程地址空间中选择合适的地址建立映射。
+* 如果addr不是NULL，则给内核一个提示，应该从什么地址开始映射，内核会选择addr之上的某个合适的地址开始映射。
+
+建立映射后，真正的映射首地址通过返回值可以得到。
+len参数是需要映射的那一部分文件的长度。off参数是从文件的什么位置开始映射，必须是页大小的整数倍（在32位体系统结构上通常是4K）。filedes是代表该文件的描述符。
+
+!! 映射共享库
+mmap函数的底层也是一个系统调用，在执行程序时经常要用到这个系统调用来映射共享库到该进程的地址空间。
+
+```
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+	printf(&quot;hello world\n&quot;);
+	return 0;
+}
+```
+用strace命令执行该程序，跟踪该程序执行过程中用到的所有系统调用的参数及返回值：
+
+```
+$ strace ./a.out 
+execve(&quot;./a.out&quot;, [&quot;./a.out&quot;], [/* 38 vars */]) = 0
+brk(0)                                  = 0x804a000
+access(&quot;/etc/ld.so.nohwcap&quot;, F_OK)      = -1 ENOENT (No such file or directory)
+mmap2(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fca000
+access(&quot;/etc/ld.so.preload&quot;, R_OK)      = -1 ENOENT (No such file or directory)
+open(&quot;/etc/ld.so.cache&quot;, O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=63628, ...}) = 0
+mmap2(NULL, 63628, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7fba000
+close(3)                                = 0
+access(&quot;/etc/ld.so.nohwcap&quot;, F_OK)      = -1 ENOENT (No such file or directory)
+open(&quot;/lib/tls/i686/cmov/libc.so.6&quot;, O_RDONLY) = 3
+read(3, &quot;\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\260a\1&quot;..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0644, st_size=1339816, ...}) = 0
+mmap2(NULL, 1349136, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7e70000
+mmap2(0xb7fb4000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x143) = 0xb7fb4000
+mmap2(0xb7fb7000, 9744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7fb7000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7e6f000
+set_thread_area({entry_number:-1 -&gt; 6, base_addr:0xb7e6f6b0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0xb7fb4000, 4096, PROT_READ)   = 0
+munmap(0xb7fba000, 63628)               = 0
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 1), ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fc9000
+write(1, &quot;hello world\n&quot;, 12hello world
+)           = 12
+exit_group(0)                           = ?
+Process 8572 detached
+```
+
+可以看到，执行这个程序要映射共享库/lib/tls/i686/cmov/libc.so.6到进程地址空间。也可以看到，printf函数的底层确实是调用write。
+</pre>
 </div>
 <div created="20200621045144974" modified="20200621045144974" title="monad">
 <pre></pre>
