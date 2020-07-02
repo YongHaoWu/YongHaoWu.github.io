@@ -18410,7 +18410,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="Process [[Environment variables]] exec" modified="20200702153114032" title="$:/StoryList">
+<div created="20200628163506618" list="fork $:/AdvancedSearch Process [[Environment variables]] exec" modified="20200702160124583" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -18436,8 +18436,8 @@ exports.context = contextWidget;
 <div bag="default" created="20200127144249151" list="$:/core/ui/Buttons/close-others $:/_sq/Stories/divertTiddlerMacro $:/core/ui/Buttons/fold $:/.giffmex/ViewToolbar/new-note-here $:/.giffmex/ViewToolbar/new-note-here-datetime $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold-bar" modified="20200625045555055" revision="0" tags="$:/giffmex/stroll" title="$:/tags/ViewToolbar" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20200418122547595" modified="20200702122949478" title="$:/temp/advancedsearch">
-<pre>pro</pre>
+<div created="20200418122547595" modified="20200702160122646" title="$:/temp/advancedsearch">
+<pre>fork</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -19867,7 +19867,7 @@ LANG
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20200702123209727" modified="20200702123630865" tags="Process" title="fork">
+<div created="20200702123209727" modified="20200702160215119" tags="Process" title="fork">
 <pre>[[Process]]
 
 The entirety of fork() is implemented using mmap / copy on write.
@@ -19895,7 +19895,11 @@ fork 的实现分为以下两步
 进行进程的话就比较简单了，只需要将其加入到就绪队列即可，接下来就等待 cpu 的调度了
 
 &quot;&quot;&quot;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+[[进程控制|http://akaedu.github.io/book/ch30s03.html]]
+
+&gt; 这个程序是在Shell下运行的，因此Shell进程是父进程的父进程。父进程运行时Shell进程处于等待状态（第 3.3 节 “wait和waitpid函数”会讲到这种等待是怎么实现的），当父进程终止时Shell进程认为命令执行结束了，于是打印Shell提示符，而事实上子进程这时还没结束，所以子进程的消息打印到了Shell提示符后面。最后光标停在This is the child的下一行，这时用户仍然可以敲命令，即使命令不是紧跟在提示符后面，Shell也能正确读取。</pre>
 </div>
 <div created="20200626102426078" modified="20200629161222986" tags="Development" title="Formal language">
 <pre>In mathematics, computer science, and linguistics, a formal language consists of words whose letters are taken from an alphabet and are well-formed according to a specific set of rules.
