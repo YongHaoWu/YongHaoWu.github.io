@@ -973,6 +973,8 @@ Error message and password prompt
 
 <li>docker</li>
 
+<li>Environment variables</li>
+
 <li>etcd 无法watch</li>
 
 <li>Everything is a file</li>
@@ -18243,8 +18245,8 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200701114720640" title="$:/state/tab/sidebar--595412856">
-<pre>TableOfContents</pre>
+<div created="20200418121835270" modified="20200702125131153" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200504200956301" modified="20200628155701482" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
@@ -18408,7 +18410,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="PCB Process WhyBashCanRunProgram fork $:/AdvancedSearch $:/ControlPanel Linux SystemProgramming SystemCalls [[Regular expression]] regex OS [[Unbuffered IO]] File&amp;IO LinuxTools Golang" modified="20200702123758739" title="$:/StoryList">
+<div created="20200628163506618" list="Process [[Environment variables]] exec" modified="20200702153114032" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19454,8 +19456,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200702045226578" title="$:/temp/search">
-<pre>regex</pre>
+<div created="20200418122544376" modified="20200702125055409" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -19797,6 +19799,55 @@ In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. C
 </div>
 <div created="20200622110429773" modified="20200622110429773" title="docker">
 <pre></pre>
+</div>
+<div created="20200702153116945" modified="20200702153829074" tags="Process" title="Environment variables">
+<pre>An environment variable is a dynamic-named value that can affect the way running [[Process]] will behave on a computer. They are part of the environment in which a process runs.
+
+命令行参数argv类似，环境变量表也是一组字符串，如下图所示：
+[img[http://akaedu.github.io/book/images/process.environ.png]]
+
+!! 例子
+libc中定义的全局变量environ指向环境变量表，environ没有包含在任何头文件中，所以在使用时要用extern声明。例如：
+
+```
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+	extern char **environ;
+	int i;
+	for(i=0; environ[i]!=NULL; i++)
+		printf(&quot;%s\n&quot;, environ[i]);
+	return 0;
+}
+```
+执行结果为
+
+```
+$ ./a.out 
+SSH_AGENT_PID=5717
+SHELL=/bin/bash
+DESKTOP_STARTUP_ID=
+TERM=xterm
+```
+
+由于父进程在调用[[fork]]创建子进程时会把自己的环境变量表也复制给子进程，所以a.out打印的环境变量和Shell进程的环境变量是相同的。
+
+!! 重要的值
+&lt;div class=&quot;box&quot;&gt;
+&quot;&quot;&quot;
+
+PATH
+可执行文件的搜索路径。ls命令也是一个程序，执行它不需要提供完整的路径名/bin/ls，然而通常我们执行当前目录下的程序a.out却需要提供完整的路径名./a.out，这是因为PATH环境变量的值里面包含了ls命令所在的目录/bin，却不包含a.out所在的目录。PATH环境变量的值可以包含多个目录，用:号隔开。在Shell中用echo命令可以查看这个环境变量的值：
+
+$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+LANG
+语言和locale，决定了字符编码以及时间、货币等信息的显示格式。
+
+&quot;&quot;&quot;
+&lt;/div&gt;</pre>
 </div>
 <div created="20200617041601630" modified="20200617041630776" tags="etcd" title="etcd 无法watch" type="text/x-markdown">
 <pre>[auth token invalid after watch reconnects](https://github.com/etcd-io/etcd/issues/11954)</pre>
