@@ -20190,13 +20190,14 @@ Use of non-[[reentrant]] functions, e.g., malloc or printf, inside signal handle
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200616155602246" modified="20200703171810613" tags="Signal" title="Signal experience" type="text/x-markdown">
+<div created="20200616155602246" modified="20200703172212020" tags="Signal" title="Signal experience" type="text/x-markdown">
 <pre>[[Note]] 
 [[graceful shutdown]]
 
 &gt; When send() is called on a socket that has already received an RST message from its peer. On Unix-based systems, the default is to send a SIGPIPE signal to your program. If you don't handle this signal, the operating system will terminate your program.
 
-## 经验
+# 经验
+
 ### [[golang]] 程序突然崩溃
 没有任何输出，捕获一些信号，发现是信号[[SIGPIPE]]导致，尝试`kill -13`。
 
@@ -20210,7 +20211,54 @@ Use of non-[[reentrant]] functions, e.g., malloc or printf, inside signal handle
 WTERMSIG(status)
 returns the number of the signal that caused the child process to terminate. This macro should only be employed if WIFSIGNALED returned true.
 
-wait的系统调用支持拿导致子进程退出的信号。
+[[wait &amp;&amp; waitpid]] 的系统调用支持拿导致子进程退出的信号。
+```
+## 捕获 [[Signal]] 的例子
+
+```C++
+  #include &lt;sys/wait.h&gt;
+       #include &lt;stdlib.h&gt;
+       #include &lt;unistd.h&gt;
+       #include &lt;stdio.h&gt;
+
+       int
+       main(int argc, char *argv[])
+       {
+           pid_t cpid, w;
+           int wstatus;
+
+           cpid = fork();
+           if (cpid == -1) {
+               perror(&quot;fork&quot;);
+               exit(EXIT_FAILURE);
+           }
+
+           if (cpid == 0) {            /* Code executed by child */
+               printf(&quot;Child PID is %ld\n&quot;, (long) getpid());
+               if (argc == 1)
+                   pause();                    /* Wait for signals */
+               _exit(atoi(argv[1]));
+
+           } else {                    /* Code executed by parent */
+               do {
+                   w = waitpid(cpid, &amp;wstatus, WUNTRACED | WCONTINUED);
+                   if (w == -1) {
+                       perror(&quot;waitpid&quot;);
+                       exit(EXIT_FAILURE);
+                   }
+
+                   if (WIFEXITED(wstatus)) {
+                       printf(&quot;exited, status=%d\n&quot;, WEXITSTATUS(wstatus));
+                   } else if (WIFSIGNALED(wstatus)) {
+                       printf(&quot;killed by signal %d\n&quot;, WTERMSIG(wstatus));
+                   } else if (WIFSTOPPED(wstatus)) {
+                       printf(&quot;stopped by signal %d\n&quot;, WSTOPSIG(wstatus));
+                   } else if (WIFCONTINUED(wstatus)) {
+                       printf(&quot;continued\n&quot;);
+                   }
+               } while (!WIFEXITED(wstatus) &amp;&amp; !WIFSIGNALED(wstatus));
+               exit(EXIT_SUCCESS);
+           }
 ```</pre>
 </div>
 <div created="20200623021308349" modified="20200624162712642" tags="Signal" title="SIGPIPE" type="text/x-markdown">
