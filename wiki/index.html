@@ -705,6 +705,8 @@ Error message and password prompt
 
 <li>$:/temp/NewTagName</li>
 
+<li>$:/temp/NewTagName-1094182542</li>
+
 <li>$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES</li>
 
 <li>$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/cs-CZ</li>
@@ -18428,7 +18430,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="Shell $? ZombieProcess [[time wait]] fork $:/AdvancedSearch Process [[wait &amp;&amp; waitpid]] [[Environment variables]] exec" modified="20200703024519340" title="$:/StoryList">
+<div created="20200628163506618" list="[[wait &amp;&amp; waitpid]] $? Shell exec" modified="20200703061731498" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -18517,6 +18519,9 @@ exports.context = contextWidget;
 </div>
 <div created="20200418122623650" modified="20200627161439229" title="$:/temp/NewTagName">
 <pre></pre>
+</div>
+<div created="20200703062259120" modified="20200703062259120" title="$:/temp/NewTagName-1094182542">
+<pre>wait &amp;&amp; waitpid</pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200616152848736" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200616152848736" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
 <pre></pre>
@@ -19876,7 +19881,7 @@ LANG
 <div created="20200630081810644" modified="20200630081810644" title="Everything is a file">
 <pre></pre>
 </div>
-<div created="20200702124631274" modified="20200703044022641" tags="Process" title="exec">
+<div created="20200702124631274" modified="20200703061724097" tags="Process" title="exec">
 <pre>&lt;div class=&quot;box&quot;&gt;
 &quot;&quot;&quot;
 
@@ -19887,7 +19892,7 @@ LANG
 &quot;&quot;&quot;
 &lt;/div&gt;
 
-调用exec后，原来打开的文件描述符仍然是打开的[37]。利用这一点可以实现I/O重定向。</pre>
+调用exec后，原来打开的文件描述符仍然是打开的。利用这一点可以实现[[File&amp;IO]]重定向。</pre>
 </div>
 <div created="20200630081448242" modified="20200630081531143" tags="Linux" title="File&amp;IO">
 <pre>[[Linux]]
@@ -20896,13 +20901,13 @@ open、read、[[write]]、close等系统函数称为无缓冲I/O（Unbuffered I/
 <div created="20200625051608737" modified="20200625051638857" tags="Network" title="Virtualization">
 <pre>[[Network]]</pre>
 </div>
-<div created="20200702170204410" modified="20200702170617294" tags="Process" title="wait &amp;&amp; waitpid">
+<div created="20200702170204410" modified="20200703062336129" tags="Process" title="wait &amp;&amp; waitpid">
 <pre>
 
 一个[[Process]]在终止时会关闭所有文件描述符，释放在用户空间分配的内存，但它的[[PCB]]还保留着，内核在其中保存了一些信息：
 
 * 如果是正常终止则保存着退出状态
-* 如果是异常终止则保存着导致该进程终止的信号是哪个。
+* 如果是异常终止则保存着导致该进程终止的信号[[Signal]]是哪个。
 
 这个进程的父进程可以调用wait或waitpid获取这些信息，然后彻底清除掉这个进程。
 
