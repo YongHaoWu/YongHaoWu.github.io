@@ -647,9 +647,13 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents/Development/OS/Linux-LinuxTools--118161433</li>
 
+<li>$:/state/toc/TableOfContents/Development/OS/Linux-Process--118161433</li>
+
 <li>$:/state/toc/TableOfContents/Development/OS/Linux-Signal--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Development/OS/Linux/IPC-Signal--118161433</li>
+
+<li>$:/state/toc/TableOfContents/Development/OS/Linux/Process-wait &amp;&amp; waitpid--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Liberal arts-Literature--118161433</li>
 
@@ -927,6 +931,8 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>$?</li>
+
 <li>Algebraic data type</li>
 
 <li>Algorithm</li>
@@ -1113,6 +1119,8 @@ Error message and password prompt
 
 <li>sendq</li>
 
+<li>Shell</li>
+
 <li>SIGHUP</li>
 
 <li>SIGINT</li>
@@ -1163,6 +1171,8 @@ Error message and password prompt
 
 <li>Virtualization</li>
 
+<li>wait &amp;&amp; waitpid</li>
+
 <li>Welcome to Stroll</li>
 
 <li>WhyBashCanRunProgram</li>
@@ -1170,6 +1180,8 @@ Error message and password prompt
 <li>WorkExperience</li>
 
 <li>write</li>
+
+<li>ZombieProcess</li>
 
 <li>中断</li>
 
@@ -18245,8 +18257,8 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200702162521282" title="$:/state/tab/sidebar--595412856">
-<pre>TableOfContents</pre>
+<div created="20200418121835270" modified="20200703024508593" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200504200956301" modified="20200628155701482" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
@@ -18356,11 +18368,17 @@ exports.context = contextWidget;
 <div created="20200628082857651" modified="20200630084535489" title="$:/state/toc/TableOfContents/Development/OS/Linux-LinuxTools--118161433">
 <pre>close</pre>
 </div>
+<div created="20200702170820122" modified="20200702170820122" title="$:/state/toc/TableOfContents/Development/OS/Linux-Process--118161433">
+<pre>open</pre>
+</div>
 <div created="20200624162617345" modified="20200624162910764" title="$:/state/toc/TableOfContents/Development/OS/Linux-Signal--118161433">
 <pre>close</pre>
 </div>
 <div created="20200629050210227" modified="20200629165449084" title="$:/state/toc/TableOfContents/Development/OS/Linux/IPC-Signal--118161433">
 <pre>close</pre>
+</div>
+<div created="20200702170821655" modified="20200702170821655" title="$:/state/toc/TableOfContents/Development/OS/Linux/Process-wait &amp;&amp; waitpid--118161433">
+<pre>open</pre>
 </div>
 <div created="20200627161537894" modified="20200629161513064" title="$:/state/toc/TableOfContents/Liberal arts-Literature--118161433">
 <pre>open</pre>
@@ -18410,7 +18428,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200628163506618" list="fork $:/AdvancedSearch Process [[Environment variables]] exec" modified="20200702161134081" title="$:/StoryList">
+<div created="20200628163506618" list="Shell $? ZombieProcess [[time wait]] fork $:/AdvancedSearch Process [[wait &amp;&amp; waitpid]] [[Environment variables]] exec" modified="20200703024519340" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -18436,8 +18454,8 @@ exports.context = contextWidget;
 <div bag="default" created="20200127144249151" list="$:/core/ui/Buttons/close-others $:/_sq/Stories/divertTiddlerMacro $:/core/ui/Buttons/fold $:/.giffmex/ViewToolbar/new-note-here $:/.giffmex/ViewToolbar/new-note-here-datetime $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold-bar" modified="20200625045555055" revision="0" tags="$:/giffmex/stroll" title="$:/tags/ViewToolbar" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20200418122547595" modified="20200702161151108" title="$:/temp/advancedsearch">
-<pre>exec</pre>
+<div created="20200418122547595" modified="20200702170634288" title="$:/temp/advancedsearch">
+<pre>wait</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -19601,6 +19619,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div bag="default" created="20200127165334843" modified="20200521145813991" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>classic</pre>
 </div>
+<div created="20200702170617295" modified="20200702170617295" title="$?">
+<pre></pre>
+</div>
 <div created="20200626171205069" modified="20200626173058911" tags="[[Type Theory]]" title="Algebraic data type" type="text/x-markdown">
 <pre>In computer programming, especially functional programming and [[Type Theory]], an algebraic data type is a kind of composite type, i.e., a type formed by combining other types.
 
@@ -19855,7 +19876,7 @@ LANG
 <div created="20200630081810644" modified="20200630081810644" title="Everything is a file">
 <pre></pre>
 </div>
-<div created="20200702124631274" modified="20200702162319144" tags="Process" title="exec">
+<div created="20200702124631274" modified="20200703044022641" tags="Process" title="exec">
 <pre>&lt;div class=&quot;box&quot;&gt;
 &quot;&quot;&quot;
 
@@ -20528,6 +20549,9 @@ https://swtch.com/~rsc/regexp/regexp1.html</pre>
 <div created="20200628054351271" modified="20200628054351271" title="sendq">
 <pre></pre>
 </div>
+<div created="20200702170617296" modified="20200702170617296" title="Shell">
+<pre></pre>
+</div>
 <div created="20200623021423346" modified="20200624162657385" tags="Signal" title="SIGHUP" type="text/x-markdown">
 <pre>[[Note]]
 - SIGHUP -- *hangup*
@@ -20872,6 +20896,20 @@ open、read、[[write]]、close等系统函数称为无缓冲I/O（Unbuffered I/
 <div created="20200625051608737" modified="20200625051638857" tags="Network" title="Virtualization">
 <pre>[[Network]]</pre>
 </div>
+<div created="20200702170204410" modified="20200702170617294" tags="Process" title="wait &amp;&amp; waitpid">
+<pre>
+
+一个[[Process]]在终止时会关闭所有文件描述符，释放在用户空间分配的内存，但它的[[PCB]]还保留着，内核在其中保存了一些信息：
+
+* 如果是正常终止则保存着退出状态
+* 如果是异常终止则保存着导致该进程终止的信号是哪个。
+
+这个进程的父进程可以调用wait或waitpid获取这些信息，然后彻底清除掉这个进程。
+
+我们知道一个进程的退出状态可以在Shell中用特殊变量[[$?]]查看，因为[[Shell]]是它的父进程，当它终止时Shell调用wait或waitpid得到它的退出状态同时彻底清除掉这个进程。
+
+如果一个进程已经终止，但是它的父进程尚未调用wait或waitpid对它进行清理，这时的进程状态称为僵尸（[[ZombieProcess]]）进程。</pre>
+</div>
 <div bag="default" created="20200128030902225" list="$:/_sq/Stories-overview" modified="20200521174009380" revision="0" tags="$:/giffmex/tutorials" title="Welcome to Stroll" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;tabs &quot;[[A stroll through Stroll]] [[The TiddlyWiki layout]] [[Using tiddlers]] [[Linking in Stroll, part 1]] [[Linking in Stroll, part 2]] [[Linking in Stroll, part 3]] [[New tiddler linked here]] [[Two columns]] [[Advanced stuff]] [[Troubleshooting]] [[Stroll vs Roam]] [[Recent updates to Stroll]] [[Download Stroll]] [[Updating Stroll]] [[Add Stroll to your TW]] [[Get goodies]] [[Help / Acknowledgments]] [[Help us]]&quot; &quot;[[A stroll through Stroll]]&quot; &quot;$:/state/strollhometabs&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
 </div>
@@ -20887,6 +20925,12 @@ open、read、[[write]]、close等系统函数称为无缓冲I/O（Unbuffered I/
 </div>
 <div created="20200630081810643" modified="20200630081810643" title="write">
 <pre></pre>
+</div>
+<div created="20200702170617297" modified="20200702170811098" tags="[[wait &amp;&amp; waitpid]]" title="ZombieProcess">
+<pre>
+如果一个进程已经终止，但是它的父进程尚未调用[[wait &amp;&amp; waitpid]]对它进行清理，这时的进程状态称为僵尸（Zombie）进程。
+
+任何进程在刚终止时都是僵尸进程，正常情况下，僵尸进程都立刻被父进程清理了</pre>
 </div>
 <div created="20200628080509933" modified="20200628080509933" title="中断">
 <pre></pre>
