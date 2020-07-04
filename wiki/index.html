@@ -983,6 +983,8 @@ Error message and password prompt
 
 <li>docker</li>
 
+<li>Draft of 'ProcessSessions'</li>
+
 <li>Elixir</li>
 
 <li>Environment variables</li>
@@ -18396,7 +18398,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200703170724377" list="Linux JobControl SIGHUP [[Joe Armstrong]] [[Programming language theory]] Elixir Erlang性能 [[Formal language]] [[Signal experience]] Bash [[Exit Codes With Special Meanings]] $:/AdvancedSearch [[wait &amp;&amp; waitpid]] TableOfContents" modified="20200704115405164" title="$:/StoryList">
+<div created="20200703170724377" list="ProcessGroups [[Draft of 'ProcessSessions']] JobControl SIGHUP [[Joe Armstrong]] [[Programming language theory]] Elixir Erlang性能 [[Formal language]] [[Signal experience]] Bash [[Exit Codes With Special Meanings]] $:/AdvancedSearch [[wait &amp;&amp; waitpid]] TableOfContents" modified="20200704120440801" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19792,6 +19794,11 @@ In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. C
 <div created="20200622110429773" modified="20200622110429773" title="docker">
 <pre></pre>
 </div>
+<div created="20200704120100566" draft.of="ProcessSessions" draft.title="ProcessSessions" modified="20200704120429890" tags="JobControl" title="Draft of 'ProcessSessions'">
+<pre>[[JobControl]]
+
+</pre>
+</div>
 <div created="20200704090838711" modified="20200704090854798" tags="[[Programming language]]" title="Elixir">
 <pre>[[Programming language]]
 
@@ -20128,10 +20135,12 @@ In computer science, inter-process communication or interprocess communication (
 <div created="20200628054351273" modified="20200628054351273" title="irqbalance">
 <pre></pre>
 </div>
-<div created="20200704115412787" modified="20200704120100566" tags="Linux" title="JobControl">
+<div created="20200704115412787" modified="20200704120155628" tags="Linux" title="JobControl">
 <pre>[[Linux]]
 
-[[ProcessSessions]] and [[ProcessGroups]] were defined to support shell job control (although occasionally they find other uses in applications). </pre>
+[[ProcessSessions]] and [[ProcessGroups]] were defined to support shell job control (although occasionally they find other uses in applications). 
+
+A session is a collection of process groups, and a process group is a collection of processes.</pre>
 </div>
 <div created="20200620041557875" modified="20200620041557875" title="Joe Armstrong">
 <pre></pre>
@@ -20376,11 +20385,22 @@ The definition of a process, informally, is quite simple: it is a running progra
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200704120100567" modified="20200704120100567" title="ProcessGroups">
-<pre></pre>
+<div created="20200704120100567" modified="20200704120638571" tags="JobControl" title="ProcessGroups">
+<pre>[[JobControl]]
+
+&lt;div class=&quot;box&quot;&gt;
+ 
+* A process group is a set of one or more processes sharing the same process group identifier (PGID). A process group ID is a number of the same type (pid_t) as a process ID. 
+
+* A process group has a process group leader, which is the process that becomes the first member of the group and whose process ID becomes the process group ID of the group. 
+
+* A process group has a lifetime, which is the period of time beginning when the leader joins the group and ending when the last member process leaves the group
+
+
+&lt;/div&gt;</pre>
 </div>
-<div created="20200704120100566" modified="20200704120100566" title="ProcessSessions">
-<pre></pre>
+<div created="20200704120100566" modified="20200704120122822" tags="JobControl" title="ProcessSessions">
+<pre>[[JobControl]]</pre>
 </div>
 <div created="20200626143636901" modified="20200626171253698" tags="[[Algebraic data type]]" title="product type" type="text/x-markdown">
 <pre>&gt; A product type (from &quot;Cartesian product&quot;, i.e tuples) T = A * B means that a value of type T has a component that is of type A and another component that is of type B. It is used to aggregate parts into a whole.
