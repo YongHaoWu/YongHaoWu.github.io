@@ -1817,13 +1817,14 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div bag="default" created="20170615081040584" modified="20200704092944060" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
-<div created="20200619183447964" modified="20200704155332847" title="$:/config/AutoSave">
-<pre>no</pre>
+<div created="20200619183447964" modified="20200703172630965" title="$:/config/AutoSave">
+<pre>yes</pre>
 </div>
-<div created="20200628154859021" modified="20200704155345181" title="$:/config/codemirror/keyMap" type="string">
-<pre>default</pre>
+<div created="20200628154859021" modified="20200628154859021" title="$:/config/codemirror/keyMap" type="string">
+<pre>vim
+</pre>
 </div>
-<div created="20200616145157008" modified="20200704155335890" title="$:/config/DownloadSaver/AutoSave">
+<div created="20200616145157008" modified="20200616145157008" title="$:/config/DownloadSaver/AutoSave">
 <pre>yes</pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -17756,8 +17757,8 @@ exports.context = contextWidget;
 <div created="20200425181600201" modified="20200425181604513" title="$:/state/plugin-info--896887961-$:/plugins/sq/Stories---1130285312">
 <pre>settings</pre>
 </div>
-<div created="20200629161729908" modified="20200629161921957" title="$:/state/plugin-info--896887961-$:/plugins/tobibeer/preview">
-<pre>yes</pre>
+<div created="20200629161729908" modified="20200704155745523" title="$:/state/plugin-info--896887961-$:/plugins/tobibeer/preview">
+<pre>no</pre>
 </div>
 <div created="20200629161732728" modified="20200629162008840" title="$:/state/plugin-info--896887961-$:/plugins/tobibeer/preview---536113993">
 <pre>config</pre>
@@ -17834,11 +17835,11 @@ exports.context = contextWidget;
 <div created="20200624162006372" modified="20200704092817731" title="$:/state/tab-1528275152">
 <pre>$:/core/ui/DefaultSearchResultList</pre>
 </div>
-<div created="20200418121928767" modified="20200704155414703" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200418121928767" modified="20200703172712816" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
-<div created="20200616144657561" modified="20200704155527385" title="$:/state/tab-2065006209">
-<pre>$:/core/ui/ControlPanel/Saving/Gitea</pre>
+<div created="20200616144657561" modified="20200703172708966" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
 <div created="20200702124900850" modified="20200702124900850" title="$:/state/tab-451103385">
 <pre>$:/plugins/danielo515/ContextPlugin/visualizer</pre>
@@ -17846,7 +17847,7 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200704154726305" title="$:/state/tab/sidebar--595412856">
+<div created="20200418121835270" modified="20200704155750956" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200504200956301" modified="20200628155701482" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -18017,7 +18018,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200704154937435" list="exec [[wait &amp;&amp; waitpid]] ProcessGroups JobControl ProcessSessions TableOfContents" modified="20200704155522587" title="$:/StoryList">
+<div created="20200704155735843" list="JobControl ProcessSessions ProcessGroups $:/ControlPanel TableOfContents" modified="20200704155755002" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19066,8 +19067,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200704155032282" title="$:/temp/search">
-<pre>tips</pre>
+<div created="20200418122544376" modified="20200704155614344" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -19481,13 +19482,15 @@ LANG
 <div created="20200630081810644" modified="20200630081810644" title="Everything is a file">
 <pre></pre>
 </div>
-<div created="20200702124631274" modified="20200704155313448" tags="Process" title="exec">
+<div created="20200702124631274" modified="20200703061724097" tags="Process" title="exec">
 <pre>&lt;div class=&quot;box&quot;&gt;
+&quot;&quot;&quot;
 
 &gt; The exec() family of functions replaces the current [[Process]] image with a new process image.
 
 用fork创建子进程后执行的是和父进程相同的程序（但有可能执行不同的代码分支），子进程往往要调用一种exec函数以执行另一个程序。当进程调用一种exec函数时，该进程的用户空间代码和数据完全被新程序替换，从新程序的启动例程开始执行。调用exec并不创建新进程，所以调用exec前后该进程的id并未改变。
 
+&quot;&quot;&quot;
 &lt;/div&gt;
 
 调用exec后，原来打开的文件描述符仍然是打开的。利用这一点可以实现[[File&amp;IO]]重定向。</pre>
@@ -19747,15 +19750,12 @@ In computer science, inter-process communication or interprocess communication (
 <div created="20200628054351273" modified="20200628054351273" title="irqbalance">
 <pre></pre>
 </div>
-<div created="20200704115412787" modified="20200704155226914" tags="Linux" title="JobControl">
+<div created="20200704115412787" modified="20200704120155628" tags="Linux" title="JobControl">
 <pre>[[Linux]]
 
 [[ProcessSessions]] and [[ProcessGroups]] were defined to support shell job control (although occasionally they find other uses in applications). 
 
-A session is a collection of process groups, and a process group is a collection of processes.
-
-[img[https://learning.oreilly.com/library/view/the-linux-programming/9781593272203/images/f34-01.jpg]]
-</pre>
+A session is a collection of process groups, and a process group is a collection of processes.</pre>
 </div>
 <div created="20200620041557875" modified="20200620041557875" title="Joe Armstrong">
 <pre></pre>
@@ -20014,7 +20014,7 @@ The definition of a process, informally, is quite simple: it is a running progra
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200704120100566" modified="20200704154737059" tags="JobControl" title="ProcessSessions">
+<div created="20200704120100566" modified="20200704155802032" tags="JobControl" title="ProcessSessions">
 <pre>[[JobControl]]
 
 </pre>
