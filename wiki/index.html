@@ -1171,6 +1171,8 @@ Error message and password prompt
 
 <li>linux process clone api</li>
 
+<li>Linux Trace Tools</li>
+
 <li>LinuxTools</li>
 
 <li>Literature</li>
@@ -1366,6 +1368,8 @@ Error message and password prompt
 <li>Unbuffered IO</li>
 
 <li>Untitled</li>
+
+<li>Use proc's fd to recover files</li>
 
 <li>UsefulWebsites</li>
 
@@ -18323,7 +18327,7 @@ exports.context = contextWidget;
 <div created="20200429223357050" modified="20200429223357050" title="$:/state/SampleReveal2">
 <pre>show</pre>
 </div>
-<div created="20200616150421976" modified="20200709072707330" title="$:/state/showeditpreview">
+<div created="20200616150421976" modified="20200717140447702" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20200423200401447" modified="20200616180723926" title="$:/state/ShowPaletteEditor">
@@ -18389,8 +18393,8 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200717105335914" title="$:/state/tab/sidebar--595412856">
-<pre>TableOfContents</pre>
+<div created="20200418121835270" modified="20200717140057023" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200504200956301" modified="20200628155701482" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
@@ -18623,7 +18627,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200713100933722" list="[[Eru 超售(Oversold)]] File&amp;IO [[Linux File System]] procfs [[goalng CI build 二进制/tmp/zero-redis: No such file or directory]] [[linux process clone api]] Process Tips [[Environment variables]] JobControl WhyBashCanRunProgram Strace [[extended Berkeley Packet Filter (eBPF or BPF)]]" modified="20200717135425976" title="$:/StoryList">
+<div created="20200713100933722" list="LinuxTools [[Linux Trace Tools]] 当程序变现很奇怪，不该变的地方变了 [[Eru 超售(Oversold)]] Debug File&amp;IO [[Linux File System]] procfs [[Use proc's fd to recover files]] [[goalng CI build 二进制/tmp/zero-redis: No such file or directory]] [[linux process clone api]] Process Tips [[Environment variables]] JobControl WhyBashCanRunProgram Strace [[extended Berkeley Packet Filter (eBPF or BPF)]]" modified="20200717143603664" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19672,8 +19676,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200717135424635" title="$:/temp/search">
-<pre>debug</pre>
+<div created="20200418122544376" modified="20200717143558700" title="$:/temp/search">
+<pre>strace</pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -20918,6 +20922,15 @@ At this point, the shell (bash), find, wc, sort, and uniq are all running.
 &quot;&quot;&quot;
 &lt;/div&gt;</pre>
 </div>
+<div created="20200717143605754" modified="20200717143629049" tags="LinuxTools" title="Linux Trace Tools">
+<pre>[[LinuxTools]]
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Linux Trace Tools' sort[ind]&gt;&gt;
+
+&lt;/div&gt;</pre>
+</div>
 <div created="20200628082330604" modified="20200628082359941" tags="Linux" title="LinuxTools">
 <pre>[[Linux]]</pre>
 </div>
@@ -21837,9 +21850,13 @@ Open source, highly available Prometheus setup with long term storage capabiliti
 <div created="20200628054351270" modified="20200628054351270" title="time wait">
 <pre></pre>
 </div>
-<div created="20200628053913405" modified="20200628054351268" tags="Debug" title="Tips">
+<div created="20200628053913405" modified="20200717140453930" tags="Debug" title="Tips">
 <pre>[[Debug]]
 
+!! 已使用
+* 另外如果你不小心删了日志或其他文件，进程未关闭文件的话，可以用文件描述符找回来。[[Use proc's fd to recover files]]
+
+!! 未使用
 * 先看dmsg，程序是崩溃还是oom，同时看看当时有没有硬件和内核告警，比如磁盘满。
 * 找找core文件放哪里了，立即备份core文件，日志和程序binary和动态库。
 * 有zabbix或falcon之类的，把出问题当时的cpu io net 内存的监控数据备份下来。
@@ -21850,7 +21867,7 @@ Open source, highly available Prometheus setup with long term storage capabiliti
 * 为代码封装一个方便打印backtrace的宏或函数，只打印地址即可，打函数名代价大又麻烦，打出来的地址用空格分隔，这样多个地址可以直接拷贝给addr2line来看函数名。
 * 怀疑编译优化有问题，就用objdump看看，我遇到过编译优化出死循环的情况。
 * 如果出问题时进程还活着，那得仔细看看/proc下的东西，文件描述符、vma、环境变量。
-* 另外如果你不小心删了日志或其他文件，进程未关闭文件的话，可以用文件描述符找回来。
+
 * [[netstat]]看网络链接的状态，监听端口，进出队列长度，留意下[[time wait]], [[close wait]],[[sendq]], [[recvq]]，也许会有惊喜。
 * [[lsof]]看看进程加载了什么位置的动态库，也许有新发现。
 * /sys下的系统配置，检查下io调度器，ssd一般都用noop，其他调度器可能影响性能。
@@ -21997,6 +22014,16 @@ open、read、[[write]]、close等系统函数称为无缓冲I/O（Unbuffered I/
 </div>
 <div title="Untitled">
 <pre>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=UTF-8&quot;&gt;&lt;ol class=&quot;tc-toc toc-selective-expandable&quot; style=&quot;box-sizing: border-box; list-style-type: none; padding-left: 1em; color: rgb(172, 172, 172); font-family: -apple-system, system-ui, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 13.3px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: nowrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li class=&quot;toc-item&quot; style=&quot;box-sizing: border-box; font-size: 0.95em; font-weight: 200; line-height: 1.5;&quot;&gt;&lt;span class=&quot; tc-reveal&quot; style=&quot;box-sizing: border-box;&quot;&gt;&lt;ol class=&quot;tc-toc toc-selective-expandable&quot; style=&quot;box-sizing: border-box; list-style-type: none; padding-left: 1em;&quot;&gt;&lt;li class=&quot;toc-item&quot; style=&quot;box-sizing: border-box; font-size: 0.95em; font-weight: 200; line-height: 1.5;&quot;&gt;&lt;span class=&quot; tc-reveal&quot; style=&quot;box-sizing: border-box;&quot;&gt;&lt;ol class=&quot;tc-toc toc-selective-expandable&quot; style=&quot;box-sizing: border-box; list-style-type: none; padding-left: 1em;&quot;&gt;&lt;li class=&quot;toc-item&quot; style=&quot;box-sizing: border-box; font-size: 0.95em; font-weight: 200; line-height: 1.5;&quot;&gt;&lt;span class=&quot; tc-reveal&quot; style=&quot;box-sizing: border-box;&quot;&gt;&lt;ol class=&quot;tc-toc toc-selective-expandable&quot; style=&quot;box-sizing: border-box; list-style-type: none; padding-left: 1em;&quot;&gt;&lt;li class=&quot;toc-item&quot; style=&quot;box-sizing: border-box; font-size: 0.95em; font-weight: 200; line-height: 1.5;&quot;&gt;&lt;span class=&quot; tc-reveal&quot; style=&quot;box-sizing: border-box;&quot;&gt;&lt;ol class=&quot;tc-toc toc-selective-expandable&quot; style=&quot;box-sizing: border-box; list-style-type: none; padding-left: 1em;&quot;&gt;&lt;li class=&quot;toc-item&quot; style=&quot;box-sizing: border-box; font-size: 0.95em; font-weight: 200; line-height: 1.5;&quot;&gt;&lt;a class=&quot;tc-tiddlylink tc-tiddlylink-resolves tc-popup-handle tc-popup-absolute&quot; href=&quot;#product%20type&quot; style=&quot;box-sizing: border-box; background-color: transparent; text-decoration: none; font-weight: normal; color: rgb(255, 187, 153); user-select: inherit; font-style: normal;&quot;&gt;&lt;span&gt; &lt;/span&gt;product type&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;</pre>
+</div>
+<div created="20200717140107283" modified="20200717140337115" tags="procfs" title="Use proc's fd to recover files">
+<pre>[[procfs]]
+
+如下，31是用Python open了的文件，删除后依然可以读取：
+```bash
+root@localhost: rm /tmp/mytext
+root@localhost: cat /proc/292203/fd/31
+this is a text, to be deleted
+```</pre>
 </div>
 <div created="20200704175507001" modified="20200712115736129" tags="Tools" title="UsefulWebsites">
 <pre>[[Tools]]
