@@ -1009,6 +1009,10 @@ Error message and password prompt
 
 <li>Capturing group</li>
 
+<li>cgroups</li>
+
+<li>cgroups + OOM</li>
+
 <li>Chinese  literature</li>
 
 <li>ci</li>
@@ -17956,8 +17960,8 @@ exports.context = contextWidget;
 <div created="20200418122101344" modified="20200625051822456" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20200418121835270" modified="20200713065850135" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200418121835270" modified="20200717034117902" title="$:/state/tab/sidebar--595412856">
+<pre>TableOfContents</pre>
 </div>
 <div created="20200504200956301" modified="20200628155701482" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
@@ -18181,7 +18185,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200713100933722" list="Network [[Network Interfaces]] [[Loopback Interface]] [[Eru 超售(Oversold)]] Calico [[Calico for Eru]]" modified="20200716061114953" title="$:/StoryList">
+<div created="20200713100933722" list="[[OS-level virtualization]] cgroups [[cgroups + OOM]] Docker Network [[Network Interfaces]] [[Loopback Interface]] [[Eru 超售(Oversold)]] Calico [[Calico for Eru]]" modified="20200717034423723" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -18207,8 +18211,8 @@ exports.context = contextWidget;
 <div bag="default" created="20200127144249151" list="$:/core/ui/Buttons/close-others $:/_sq/Stories/divertTiddlerMacro $:/core/ui/Buttons/fold $:/.giffmex/ViewToolbar/new-note-here $:/.giffmex/ViewToolbar/new-note-here-datetime $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold-bar" modified="20200625045555055" revision="0" tags="$:/giffmex/stroll" title="$:/tags/ViewToolbar" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20200418122547595" modified="20200705130723125" title="$:/temp/advancedsearch">
-<pre>fork</pre>
+<div created="20200418122547595" modified="20200717034118457" title="$:/temp/advancedsearch">
+<pre>OS-level virtualization</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -19230,8 +19234,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200716061111424" title="$:/temp/search">
-<pre>Network</pre>
+<div created="20200418122544376" modified="20200717034122018" title="$:/temp/search">
+<pre>OS-level virtualization</pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -19672,6 +19676,24 @@ echo 'net.netfilter.nf_conntrack_max=1000000' &gt;&gt;/etc/sysctl.conf
 
 ### example
 ` (abc){3} matches abcabcabc. First group matches abc.`</pre>
+</div>
+<div created="20200717034127225" modified="20200717034454714" tags="[[OS-level virtualization]]" title="cgroups">
+<pre>[[OS-level virtualization]]
+
+cgroups (abbreviated from control groups) is a Linux kernel feature that limits, accounts for, and isolates the resource usage (CPU, memory, disk I/O, network, etc.) of a collection of processes.</pre>
+</div>
+<div created="20200717035455425" modified="20200717035559512" tags="cgroups" title="cgroups + OOM">
+<pre>[[cgroups]]
+
+&lt;&lt;&lt;.tc-big-quote
+memory.oom_control
+
+contains a flag (0 or 1) that enables or disables the Out of Memory killer for a cgroup. 
+&lt;&lt;&lt;
+
+
+
+docker在设置cgroup时设置oom control的，kernel来杀OOM的进程。</pre>
 </div>
 <div created="20200627161505732" modified="20200627161536435" tags="Literature" title="Chinese  literature">
 <pre>[[Literature]]</pre>
