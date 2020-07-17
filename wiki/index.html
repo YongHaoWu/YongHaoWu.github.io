@@ -1083,6 +1083,8 @@ Error message and password prompt
 
 <li>Exit Codes With Special Meanings</li>
 
+<li>extended Berkeley Packet Filter (eBPF or BPF)</li>
+
 <li>file descriptor</li>
 
 <li>File&amp;IO</li>
@@ -1146,6 +1148,8 @@ Error message and password prompt
 <li>irqbalance</li>
 
 <li>is all program exit cause by signal?</li>
+
+<li>JavaScript</li>
 
 <li>JobControl</li>
 
@@ -18208,7 +18212,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200713100933722" list="LinuxTools Strace Linux Bash OS 抓取bash自身的系统调用 mmap [[Bash Redirect Output]] Management [[Project Management]] [[Dev Align With QA when reconstruct]] Development" modified="20200717074304439" title="$:/StoryList">
+<div created="20200713100933722" list="LinuxTools [[extended Berkeley Packet Filter (eBPF or BPF)]] Strace Linux Bash OS 抓取bash自身的系统调用 mmap [[Bash Redirect Output]] Management [[Project Management]] [[Dev Align With QA when reconstruct]] Development" modified="20200717082724770" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -20046,6 +20050,15 @@ Core 得到 Nodes 部署方案后，会把计算每个 Node 的可部署量是�
 can use this to check a process exist caused, which call [[wait &amp;&amp; waitpid]] actually.
 </pre>
 </div>
+<div created="20200717082726396" modified="20200717083242741" tags="LinuxTools" title="extended Berkeley Packet Filter (eBPF or BPF)">
+<pre>[[LinuxTools]]
+
+&lt;&lt;&lt;.tc-big-quote
+BPF can be difficult to explain precisely because it can do so much. It provides a way to run mini programs on a wide variety of kernel and application events. If you are familiar with JavaScript, you may see some similarities: JavaScript allows a website to run mini programs on browser events such as mouse clicks, enabling a wide variety of web-based applications. BPF allows the kernel to run mini programs on system and application events, such as disk I/O, thereby enabling new system technologies. It makes the kernel fully programmable, empowering users (including non-kernel developers) to customize and control their systems in order to solve real-world problems.
+
+BPF is a flexible and efficient technology composed of an instruction set, storage objects, and helper functions. It can be considered a virtual machine due to its virtual instruction set specification. These instructions are executed by a Linux kernel BPF runtime, which includes an interpreter and a JIT compiler for turning BPF instructions into native instructions for execution. BPF instructions must first pass through a verifier that checks for safety, ensuring that the BPF program will not crash or corrupt the kernel (it doesn’t, however, prevent the end user from writing illogical programs that may execute but not make sense).
+&lt;&lt;&lt;</pre>
+</div>
 <div created="20200712135933478" modified="20200712140814501" tags="File&amp;IO" title="file descriptor">
 <pre>[[File&amp;IO]]
 
@@ -20409,6 +20422,9 @@ func main() {
 
 }
 ```</pre>
+</div>
+<div created="20200717083242742" modified="20200717083242742" title="JavaScript">
+<pre></pre>
 </div>
 <div created="20200704115412787" modified="20200705103553097" tags="Linux" title="JobControl">
 <pre>[[Linux]]
@@ -21205,13 +21221,14 @@ For example, when a particular function is executed, or when a particular variab
 &quot;&quot;&quot;
 &lt;/div&gt;</pre>
 </div>
-<div created="20200717074305953" modified="20200717075258424" tags="LinuxTools" title="Strace">
+<div created="20200717074305953" modified="20200717082416152" tags="LinuxTools" title="Strace">
 <pre>[[LinuxTools]]
 
 ! Background
 strace is a diagnostic, debugging and instructional userspace utility for Linux.
 
-[[Very useful tips in official site|https://strace.io/]]
+* [[Very useful tips in official site|https://strace.io/]]
+* [[Julia Evans's blog |https://jvns.ca/categories/strace/]]
 
 !! Useful params
 ```bash
