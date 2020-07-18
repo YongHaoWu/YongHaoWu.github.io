@@ -1031,6 +1031,8 @@ Error message and password prompt
 
 <li>close wait</li>
 
+<li>cocurrent write need to ensure share var operation are atomic</li>
+
 <li>command line</li>
 
 <li>Computing</li>
@@ -18631,7 +18633,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200713100933722" list="[[Linux Trace Tools]] [[ltrace - A library call tracer]] 当程序变现很奇怪，不该变的地方变了 [[Eru 超售(Oversold)]] Debug File&amp;IO [[Linux File System]] procfs [[Use proc's fd to recover files]] [[goalng CI build 二进制/tmp/zero-redis: No such file or directory]] [[linux process clone api]] Process Tips [[Environment variables]] JobControl WhyBashCanRunProgram Strace [[extended Berkeley Packet Filter (eBPF or BPF)]]" modified="20200718052255542" title="$:/StoryList">
+<div created="20200713100933722" list="[[is all program exit cause by signal?]] golang Golang [[cocurrent write need to ensure share var operation are atomic]] [[Linux Trace Tools]] [[ltrace - A library call tracer]] 当程序变现很奇怪，不该变的地方变了 [[Eru 超售(Oversold)]] Debug File&amp;IO [[Linux File System]] procfs [[Use proc's fd to recover files]] [[goalng CI build 二进制/tmp/zero-redis: No such file or directory]] [[linux process clone api]] Process Tips [[Environment variables]] JobControl WhyBashCanRunProgram Strace [[extended Berkeley Packet Filter (eBPF or BPF)]]" modified="20200718164354078" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19680,14 +19682,14 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200717143558700" title="$:/temp/search">
-<pre>strace</pre>
+<div created="20200418122544376" modified="20200718164344720" title="$:/temp/search">
+<pre>golang </pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200702123639422" modified="20200717135643551" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>Eru CopyFileToContainer 偶尔会失败</pre>
+<div created="20200702123639422" modified="20200718164353970" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>is all program exit cause by signal?</pre>
 </div>
 <div created="20200629161500897" modified="20200629161500897" title="$:/temp/tobibeer/preview-2-tiddler">
 <pre>Literature</pre>
@@ -20181,6 +20183,69 @@ In terms of classiful [[networks]], there are five classes: A, B, C, D, and E. C
 </div>
 <div created="20200628054351270" modified="20200628054351270" title="close wait">
 <pre></pre>
+</div>
+<div created="20200718164405365" modified="20200718164604898" tags="Golang" title="cocurrent write need to ensure share var operation are atomic">
+<pre>[[Golang]]
+
+```golang
+const (
+	FIRST  = &quot;WHAT THE&quot;
+	SECOND = &quot;F*CK&quot;
+)
+
+func main() {
+	var s string
+	go func() {
+		i := 1
+		for {
+			i = 1 - i
+			if i == 0 {
+				s = FIRST
+			} else {
+				s = SECOND
+			}
+			time.Sleep(10)
+		}
+	}()
+
+	for {
+		fmt.Println(s)
+		time.Sleep(10)
+	}
+}
+```
+因为对string的赋值不是原子的，所以有并发冲突。
+
+```bash
+$ go run -race /tmp/x.go &gt; /dev/null
+==================
+WARNING: DATA RACE
+Write at 0x00c0000901e0 by goroutine 7:
+  main.main.func1()
+      /tmp/x.go:20 +0x65
+
+Previous read at 0x00c0000901e0 by main goroutine:
+  main.main()
+      /tmp/x.go:29 +0x9d
+
+Goroutine 7 (running) created at:
+  main.main()
+      /tmp/x.go:15 +0x8f
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c0000901e0 by main goroutine:
+  main.main()
+      /tmp/x.go:29 +0x9d
+
+Previous write at 0x00c0000901e0 by goroutine 7:
+  main.main.func1()
+      /tmp/x.go:20 +0x65
+
+Goroutine 7 (running) created at:
+  main.main()
+      /tmp/x.go:15 +0x8f
+```</pre>
 </div>
 <div created="20200622162527708" modified="20200622162527708" title="command line">
 <pre></pre>
