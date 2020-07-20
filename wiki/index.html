@@ -1061,6 +1061,8 @@ Error message and password prompt
 
 <li>Docker</li>
 
+<li>Docker copy's interface parm is tar file</li>
+
 <li>dup2</li>
 
 <li>Elixir</li>
@@ -18645,7 +18647,7 @@ exports.context = contextWidget;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20200713100933722" list="[[ltrace - A library call tracer]]" modified="20200719161940940" title="$:/StoryList">
+<div created="20200713100933722" list="Docker [[Docker copy's interface parm is tar file]] [[cocurrent write need to ensure share var operation are atomic]] Strace [[ltrace - A library call tracer]]" modified="20200720041504117" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20191206235905940" modified="20200218074428072" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/onlyice/ui-elements" type="text/vnd.tiddlywiki">
@@ -19694,8 +19696,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200502174943975" modified="20200521150755106" title="$:/temp/RenameTags/search">
 <pre>blinks</pre>
 </div>
-<div created="20200418122544376" modified="20200719122856042" title="$:/temp/search">
-<pre>江城子·画楼帘幕卷新晴</pre>
+<div created="20200418122544376" modified="20200720041502605" title="$:/temp/search">
+<pre>docker</pre>
 </div>
 <div created="20200626105030927" modified="20200626105030927" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -20316,6 +20318,23 @@ bash会[[fork]]再[[exec]]跑这个后台程序。
 </div>
 <div created="20200707081128876" modified="20200707081149402" tags="[[OS-level virtualization]]" title="Docker">
 <pre>Docker is a set of platform as a service (PaaS) products that uses [[OS-level virtualization]] to deliver software in packages called containers.</pre>
+</div>
+<div created="20200720041505614" modified="20200720042544641" tags="Docker" title="Docker copy's interface parm is tar file">
+<pre>[[Docker]]
+
+core 会先打包成tar，再copy
+
+```golang
+func (e *Engine) VirtualizationCopyTo(ctx context.Context, ID, target string, content io.Reader, AllowOverwriteDirWithFile, CopyUIDGID bool) error {
+	return withTarfileDump(target, content, func(target, tarfile string) error {
+		content, err := os.Open(tarfile)
+		if err != nil {
+			return err
+		}
+		return e.client.CopyToContainer(ctx, ID, filepath.Dir(target), content, dockertypes.CopyToContainerOptions{AllowOverwriteDirWithFile: AllowOverwriteDirWithFile, CopyUIDGID: CopyUIDGID})
+	})
+}
+```</pre>
 </div>
 <div created="20200708153944529" modified="20200708153944529" title="dup2">
 <pre></pre>
