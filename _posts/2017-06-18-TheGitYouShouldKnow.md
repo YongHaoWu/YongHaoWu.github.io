@@ -17,7 +17,7 @@ tags:
 试试你能回答出以下问题不：
 
 - `git push origin master`命令中，origin 代表的是什么，整个命令是什么意思，origin 可以修改不
-- `git fetch origin; git rebase origin master` 这些命令知道吗？跟 merge 有什么区别？
+- `git fetch origin; git rebase origin/master` 这些命令知道吗？跟 merge 有什么区别？
 - git如何合并两个补丁，对第三个补丁进行修改？（这个很重要，因为你不会才导致 git commit 的信息没有意义，commit 不够小和多）
 
 
