@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 递归的实现——循环，汇编，CPS与 y 组合子
-description: 
+title: 递归的实现: 循环，汇编，CPS与 y 组合子
+description: 如果定义一个概念需要用到这个概念本身，我们称它的定义是递归的（Recursive）
 categories:
 - 技术
 tags:
 - go
 ---
 
-### 递归的实现——循环，汇编，CPS与 y 组合子
+## 递归的实现——循环，汇编，CPS与 y 组合子
 
 ![公众号](https://img-blog.csdnimg.cn/20210211125314723.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hpb2hpb2h1,size_16,color_FFFFFF,t_70#pic_center)
 
