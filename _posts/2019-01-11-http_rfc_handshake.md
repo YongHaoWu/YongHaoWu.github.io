@@ -9,6 +9,8 @@ tags:
 ---
 ## 三次握手的误解与错误类比(RFC解读)
 
+![公众号](https://img-blog.csdnimg.cn/20210211125314723.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hpb2hpb2h1,size_16,color_FFFFFF,t_70#pic_center)
+
 关于TCP三次握手几乎是应届毕业生面试常见的问题了，然而网上还很多比比皆是的错误，以知乎 [TCP 为什么是三次握手，而不是两次或四次？](https://www.zhihu.com/question/24853633) 上的热门答案为例子，第一个3.6K 次赞同的类比就是错误的：
 
 ```
