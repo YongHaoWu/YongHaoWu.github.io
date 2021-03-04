@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 递归的实现
-description: 如果定义一个概念需要用到这个概念本身，我们称它的定义是递归的（Recursive）
+description:
 categories:
 - 技术
 tags:
