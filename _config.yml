@@ -19,7 +19,7 @@ feed: /atom.xml
 nav:
   - text: 首页
     url: /
-  - text: 学习原则
+  - text: 每个人的一生 都是一次远行
     url: /experience/
   - text: 文章列表
     url: /archives/
